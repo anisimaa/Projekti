@@ -5,14 +5,14 @@
 }
 
 .container {
-    background-color: rgb(173, 187, 187);
-    padding: 10em 20em 10em 20em;
-    margin: 10em 20em 10em 20em;
+    background-color: #F0DAAE;
+    padding: 14em 13em 14em 13em;
+    margin: 5em 27em 5em 27em;
+    border-radius: 15px;
     display: flex;
     justify-content: center;
 }
 
-html {
+body {
     background-image: url(../img/syksy_1.jpg);
 }
-
