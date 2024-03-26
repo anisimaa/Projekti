@@ -1,3 +1,14 @@
-.container {
-    
+* {
+    margin:0;
+    padding: 0;
+    background-image: url();
 }
+
+.container {
+    background-color: rgb(173, 187, 187);
+    padding: 10em 20em 10em 20em;
+    margin: 10em 20em 10em 20em;
+    display: flex;
+    justify-content: center;
+}
+
