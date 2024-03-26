@@ -1,7 +1,7 @@
 * {
     margin:0;
     padding: 0;
-    background-image: url();
+    
 }
 
 .container {
@@ -10,5 +10,9 @@
     margin: 10em 20em 10em 20em;
     display: flex;
     justify-content: center;
+}
+
+html {
+    background-image: url(../img/syksy_1.jpg);
 }
 
