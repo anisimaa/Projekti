@@ -6,8 +6,8 @@
 
 .container {
     background-color: #F0DAAE;
-    padding: 14em 13em 14em 13em;
-    margin: 5em 27em 5em 27em;
+    padding: 6em 1em 6em 1em;
+    margin: 8em 41.5em 10em 41.5em;
     border-radius: 15px;
     display: flex;
     justify-content: center;
@@ -15,4 +15,58 @@
 
 body {
     background-image: url(../img/syksy_1.jpg);
+}
+
+img {
+    width: 18em;
+    position: fixed;
+    padding-top: 2em;
+    padding-bottom: 3em;
+}
+
+
+p {
+    position: fixed;
+    font-size: 28px;
+}
+
+#buttons {
+    padding-top: 16em;
+}
+
+#button1{
+    margin: 0.5em;
+    font-size: 20px;
+    width: 7em;
+    height: 3.5em;
+    border-radius: 7px;
+    border: 1px solid #828282;
+    background-color: #F3EAD9;
+}
+#button2{
+    margin: 0.5em;
+    font-size: 20px;
+    width: 7em;
+    height: 3.5em;
+    border-radius: 7px;
+    border: 1px solid #828282;
+    background-color: #F3EAD9;
+}
+#button3{
+    margin: 0.5em;
+    font-size: 20px;
+    width: 7em;
+    height: 3.5em;
+    border-radius: 7px;
+    border: 1px solid #828282;
+    background-color: #F3EAD9;
+}
+#button4{
+    margin: 0.5em;
+    font-size: 20px;
+    width: 7em;
+    height: 3.5em;
+    border-radius: 7px;
+    border: 1px solid #828282;
+    background-color: #F3EAD9;
 }
