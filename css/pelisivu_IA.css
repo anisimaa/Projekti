@@ -12,7 +12,11 @@
     justify-content: center;
 }
 
-html {
-    background-image: url(../img/syksy_1.jpg);
+img {
+    background-image: url(../img/syksy1.jpg);
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    padding: 0;
 }
 
