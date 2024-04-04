@@ -1,0 +1,11 @@
+body {
+    background-image: url('../img/etusivun\ pavut.png');
+    display: flex;
+    justify-content: center;
+}
+
+#container {
+    margin: 50px;
+    padding: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
