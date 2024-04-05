@@ -5,7 +5,9 @@ body {
 }
 
 #container {
+    background-color: rgb(255, 235, 188);
     margin: 50px;
+    margin-top: 200px;
     padding: 50px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
