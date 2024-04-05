@@ -15,6 +15,18 @@ body {
     padding: 2em;
 }
 
-footer {
-    background-color: #f0daae;
+.footer {
+  background-color: #f0daae;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding-top: 1em;
+  padding-left: 0.5em;
+  text-align: start;
+  height: 5em;
+}
+
+p.footer {
+    
 }
