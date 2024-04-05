@@ -1,9 +1,18 @@
 body {
     background-image: url(../img/etusivun\ pavut.png);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    height: 100vh;
 }
 
 .content {
     background-color: #f0daae;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    padding: 2em;
 }
 
 footer {
