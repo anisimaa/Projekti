@@ -26,3 +26,24 @@ body {
   text-align: start;
   height: 5em;
 }
+
+.logos {
+  position: fixed;
+  right: 1em;
+}
+
+.bi-youtube {
+  text-decoration: none;
+  color: #0f1110;
+}
+
+.bi-instagram {
+  margin-right: 0.2em;
+  text-decoration: none;
+  color: #0f1110;
+}
+
+.bi-linkedin {
+  text-decoration: none;
+  color: #0f1110;
+}
