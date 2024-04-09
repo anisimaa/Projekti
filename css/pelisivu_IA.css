@@ -1,72 +1,93 @@
 * {
     margin:0;
     padding: 0;
-    
 }
 
 .container {
     background-color: #F0DAAE;
-    padding: 6em 1em 6em 1em;
-    margin: 8em 41.5em 10em 41.5em;
+    margin-top: 2.5em;
+    margin-right: auto;
+    margin-left: auto;
     border-radius: 15px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    height: 35.5em;
+    width: 30em;
 }
 
 body {
     background-image: url(../img/syksy_1.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
 img {
-    width: 18em;
-    position: fixed;
-    padding-top: 2em;
-    padding-bottom: 3em;
+    width: 16em;
+    margin-top: 1em;
 }
 
-
 p {
-    position: fixed;
     font-size: 28px;
+    margin-top: 2em;
+    text-align: center;
 }
 
 #buttons {
-    padding-top: 16em;
+    display: flex;  
+    flex-wrap: wrap; 
+    padding: 2em;
+    padding-left: 5em;
 }
 
-#button1{
+.button{
     margin: 0.5em;
     font-size: 20px;
     width: 7em;
     height: 3.5em;
     border-radius: 7px;
-    border: 1px solid #828282;
+    border: 1px solid #c2b599;
     background-color: #F3EAD9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #482E1D;
 }
-#button2{
-    margin: 0.5em;
-    font-size: 20px;
-    width: 7em;
-    height: 3.5em;
+
+#buttons .button:hover {
+    background-color: #faf3e0;
+    font-weight: bold;
+    color: #895D2B;
+}
+
+.seuraava {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    left: 60em;
+    font-size: 16px;
+    width: 6em;
+    height: 2em;
     border-radius: 7px;
-    border: 1px solid #828282;
-    background-color: #F3EAD9;
+    border: 1px solid #f4f4f4;
+    background-color: #fff1d4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-#button3{
-    margin: 0.5em;
-    font-size: 20px;
-    width: 7em;
-    height: 3.5em;
-    border-radius: 7px;
-    border: 1px solid #828282;
-    background-color: #F3EAD9;
+
+.seuraava:hover {
+    background-color: #efdcb5;
+    border: 2px solid #c2b599;
 }
-#button4{
-    margin: 0.5em;
-    font-size: 20px;
-    width: 7em;
-    height: 3.5em;
-    border-radius: 7px;
-    border: 1px solid #828282;
-    background-color: #F3EAD9;
+
+/* Responsiivisuus puhelimelle */
+@media screen and (max-width: 767px) {
+    .container {
+        margin: 2em 1em;
+        width: auto;
+    }
+
+    .seuraava{
+        margin-left: 13em;
+        margin-bottom: 2em;
+    }
 }
+
