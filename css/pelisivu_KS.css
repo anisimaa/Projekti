@@ -62,7 +62,7 @@
 }
 
 .container {
-    background-color: #F0DAAE;
+    background-color: #cdcdcd;
     margin-top: 2.5em;
     margin-right: auto;
     margin-left: auto;
@@ -71,24 +71,26 @@
     flex-direction: column;
     align-items: center; 
     justify-content: center; 
-    height: 35.5em;
-    width: 30em;
+    height: 39em;
+    width: 40em;
 }
 
 body {
-    background-image: url(../img/syksy_1.jpg);
+    background-image: url(../img/talvi_1.jpg);
     background-size: cover;
     background-position: center;
 }
 
 img {
-    width: 16em;
+    width: 30em;
     margin-top: 1em;
+    max-height: 30em;
+    
 }
 
 p {
     font-size: 28px;
-    margin-top: 2em;
+    margin-top: 1em;
     text-align: center;
 }
 
@@ -148,3 +150,22 @@ p {
         margin-bottom: 2em;
     }
 }
+
+
+  .invisible-button {
+    position: absolute;
+    top: 37%;
+    left: 42%;
+    background: none;
+    border: none;
+    color: none;
+    font-size: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+  }
+  
+  .invisible-button:focus {
+    outline: none;
+  }
+  
