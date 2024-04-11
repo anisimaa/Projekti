@@ -121,9 +121,9 @@ p {
 
 .seuraava {
     position: fixed;
-    bottom: 20px;
+    bottom: 30px;
     right: 20px;
-    left: 60em;
+    left: 80em;
     font-size: 16px;
     width: 6em;
     height: 2em;
@@ -147,7 +147,7 @@ p {
 
     .seuraava{
         margin-left: 13em;
-        margin-bottom: 2em;
+        margin-bottom: 3em;
     }
 }
 
