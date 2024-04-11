@@ -72,14 +72,12 @@
     flex-direction: column;
     align-items: center; 
     justify-content: center; 
-    height: 35.5em;
     width: 30em;
 }
 
 body {
-    background-image: url(../img/syksy_1.jpg);
+    background: url(../img/syksy_3.png) no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
 }
 
 img {
@@ -103,8 +101,8 @@ p {
 .button{
     margin: 0.5em;
     font-size: 20px;
-    width: 7em;
-    height: 3.5em;
+    width: 15em;
+    height: 3em;
     border-radius: 7px;
     border: 1px solid #c2b599;
     background-color: #F3EAD9;
