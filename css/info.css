@@ -1,4 +1,5 @@
 /*navbar*/
+/*navbar levitettynä*/
 .sidenav {
   height: 100%;
   width: 0;
@@ -12,6 +13,13 @@
   transition: 0.5s;
 }
 
+/*navbar headeri*/
+#navbar-header {
+  color: #482e1d;
+  margin-left: 30px;
+}
+
+/*linkit navbarinv sisällä*/
 .sidenav a {
   padding: 8px 8px 8px 32px;
   text-decoration: none;
@@ -21,11 +29,12 @@
   transition: 0.3s;
 }
 
-
+/*linkki hover*/
 .sidenav a:hover {
   color: #895d2b;
 }
 
+/*navbar ruksi nappi*/
 .sidenav .closebtn {
   position: absolute;
   top: 0;
@@ -34,13 +43,10 @@
   margin-left: 50px;
 }
 
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}
-
+/*navbar nappi*/
 span {
   color: #482e1d;
+  margin-left: 10px;
 }
 
 /*Pienemmille ruuduille: Jos ruutu on pienempi kuin 450px, muuta navbarin tyyliä (ja pienempi fontti koko) */
@@ -68,6 +74,7 @@ body {
   height: 350px;
   text-align: center;
   padding: 2em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .footer {
@@ -83,7 +90,7 @@ text-align: start;
 height: 5em;
 }
 
-.logos {
+.logot {
 position: fixed;
 right: 1em;
 }

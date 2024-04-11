@@ -11,8 +11,9 @@
     transition: 0.5s;
   }
   
-  h1 {
+  #navbar-header {
     color: #482e1d;
+    margin-left: 30px;
   }
 
   .sidenav a {
