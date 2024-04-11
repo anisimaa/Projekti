@@ -45,7 +45,7 @@
   
   /*navbar nappi*/
   span {
-    color: #482e1d;
+    color: #895d2b;
     margin-left: 10px;
   }
   
@@ -56,95 +56,43 @@
   }
   /*navbar*/
 
-  * {
-    margin:0;
-    padding: 0;
-}
+  body {
+    background-image: url(../img/syksy_2.png);
+    background-size: cover;
+    background-attachment: fixed;
+  }
 
-  .container {
-    background-color: #F0DAAE;
-    margin-top: 2.5em;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 15px;
+  #top {
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: center; 
-    height: 35.5em;
-    width: 30em;
-}
-
-body {
-  background-image: url(../img/syksy_1.jpg);
-  background-size: cover;
-
-}
-
-img {
-  width: 16em;
-  margin-top: 1em;
-}
-
-p {
-  font-size: 28px;
-  margin-top: 2em;
-  text-align: center;
-}
-
-#buttons {
-  display: flex;  
-  flex-wrap: wrap; 
-  padding: 2em;
-  padding-left: 5em;
-}
-
-.button{
-  margin: 0.5em;
-  font-size: 20px;
-  width: 7em;
-  height: 3.5em;
-  border-radius: 7px;
-  border: 1px solid #c2b599;
-  background-color: #F3EAD9;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #482E1D;
-}
-
-#buttons .button:hover {
-  background-color: #faf3e0;
-  font-weight: bold;
-  color: #895D2B;
-}
-
-.seuraava {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  left: 60em;
-  font-size: 16px;
-  width: 6em;
-  height: 2em;
-  border-radius: 7px;
-  border: 1px solid #f4f4f4;
-  background-color: #fff1d4;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.seuraava:hover {
-  background-color: #efdcb5;
-  border: 2px solid #c2b599;
-}
-
-/* Responsiivisuus puhelimelle */
-@media screen and (max-width: 767px) {
-  .container {
-      margin: 2em 1em;
-      width: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 300px;
+    height: 400px;
+    background-color: #f0daae;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
-  .seuraava{
-      margin-left: 13em;
-      margin-bottom: 2em;
+    
+  #valitse {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    width: 300px;
+    height: 200px;
+    background-color: #f0daae;
   }
-}
+  
+  .list {
+    background-color: #482e1d;
+    display: flex;  
+    flex-wrap: wrap;
+    margin: 0.5em; 
+    cursor: grab;
+  }

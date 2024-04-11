@@ -96,20 +96,50 @@
 </nav>
 <!--navigointi-->
 
-    <div class="container">
-        <div><p>Tunnista kahvi</p></div>
-        
-        <div><img src="../img/cafe-7441426_1280.png"/></div>
+<div class="container">
 
-        <div id="buttons">
-        <br><button class="button" id="button1">Latte</button>
-        <button class="button" id="button2">Cappuccino</button><br>
-        <button class="button" id="button3">Cortado</button>
-        <button class="button" id="button4">Mocha</button>
-    </div>
-    </div>
-    <div class="seuraavabutton">
-        <button class="seuraava">Seuraava</button>
-    </div>
+  <div id="top">Valmistaessasi flat whitea vaahdota maito _______ asteiseksi ____ kannulla. Vaahtokerroksen tulisi olla ____ paksu.</div>
+
+  <div id="valitse">
+    <div class="list" draggable="true">pienellä</div>
+    <div class="list" draggable="true">keskikokoisella</div>
+    <div class="list" draggable="true">isolla</div>
+    <div class="list" draggable="true">55-60</div>
+    <div class="list" draggable="true">60-65</div>
+    <div class="list" draggable="true">65-70</div>
+    <div class="list" draggable="true">0,5-1 cm</div>
+    <div class="list" draggable="true">1-1,5 cm</div>
+    <div class="list" draggable="true">1-2 cm</div>
+  </div>
+</div>
+
+<script>
+  let lists = document.getElementsByClassName("list");
+  let topBox = document.getElementById("top");
+  let valitseBox = document.getElementById("valitse");
+
+  for(list of lists){
+    list.addEventListener("dragstart", function(e){
+      let selected = e.target;
+
+      topBox.addEventListener("dragover", function(e){
+        e.preventDefault();
+      });
+      topBox.addEventListener("drop", function(e){
+        topBox.appendChild(selected);
+        selected = null;
+      });
+      
+      valitseBox.addEventListener("dragover", function(e){
+        e.preventDefault();
+      });
+      valitseBox.addEventListener("drop", function(e){
+        valitseBox.appendChild(selected);
+        selected = null;
+      });
+    })
+  }
+</script>
+
 </body>
 </html>
