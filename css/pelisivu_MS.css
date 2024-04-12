@@ -91,29 +91,24 @@ p {
     text-align: center;
 }
 
-#buttons {
-    display: flex;  
-    flex-wrap: wrap; 
-    padding: 2em;
-    padding-left: 5em;
+.list {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  gap: 10px 0;
 }
 
-.button{
-    margin: 0.5em;
-    font-size: 20px;
-    width: 15em;
-    height: 3em;
-    border-radius: 7px;
-    border: 1px solid #c2b599;
-    background-color: #F3EAD9;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #482E1D;
-}
-
-#buttons .button:hover {
-    background-color: #faf3e0;
-    font-weight: bold;
-    color: #895D2B;
+.list_item {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  will-change: transform;
+  background: #F3EAD9;
+  color: #F3EAD9;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px -1px #F3EAD9, 0 2px 4px -2px #F3EAD9;
 }
 
 .seuraava {
