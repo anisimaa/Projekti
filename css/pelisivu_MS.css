@@ -106,9 +106,44 @@ p {
   position: relative;
   will-change: transform;
   background: #F3EAD9;
-  color: #F3EAD9;
+  color: #333;
   border-radius: 5px;
   box-shadow: 0 4px 6px -1px #F3EAD9, 0 2px 4px -2px #F3EAD9;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.list_drag-handle {
+  position: absolute;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.list_drag-handle::after {
+  content: '⠿';
+  font-size: 25px;
+  color: #00000099;
+}
+
+.list_item.is-idle {
+  transition: 0.25s ease transform;
+}
+
+.list_item.is-idle .list_drag-handle {
+  cursor: grab;
+}
+
+.list_item.is-draggable,
+.list_item.is-draggable .drag-handle {
+  cursor: grabbing;
+}
+
+.list_item.is-draggable {
+  z-index: 10;
 }
 
 .seuraava {
