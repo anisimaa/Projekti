@@ -113,7 +113,7 @@ p {
   font-size: 18px;
 }
 
-.list_drag-handle {
+.drag-handle {
   position: absolute;
   right: 0;
   width: 44px;
@@ -123,17 +123,17 @@ p {
   align-items: center;
 }
 
-.list_drag-handle::after {
+.drag-handle::after {
   content: '⠿';
   font-size: 25px;
-  color: #00000099;
+  color: #d4c09a;
 }
 
-.list_item.is-idle {
+.list_item .is-idle {
   transition: 0.25s ease transform;
 }
 
-.list_item.is-idle .list_drag-handle {
+.list_item .is-idle .list_drag-handle {
   cursor: grab;
 }
 
