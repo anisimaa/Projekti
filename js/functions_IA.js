@@ -125,8 +125,10 @@ seuraavabutton.addEventListener("click", () => {
 
 function showScore(){
     resetState();
+
     questionElement.innerHTML = `Sait ${score} pistettä!`;
     seuraavabutton.innerHTML = "Pelaa uudelleen";
+    img.src = '../img/kauha.png';
     seuraavabutton.style.display = "block";
 }
 
