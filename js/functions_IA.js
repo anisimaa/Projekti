@@ -3,11 +3,11 @@ const questions = [
         question: "Tunnista kahvi",
         answers: [
             {text: "Americano", correct: false},
-            {text: "Cappucino", correct: true},
+            {text: "Cappuccino", correct: true},
             {text: "Cortado", correct: false},
             {text: "Mocha", correct: false},
         ],
-        img: "../img/cafe-7441426_1280.png"
+        img: "../img/cappuccino.jpg"
     },
     {
         question: "Tunnista kahvi",
@@ -17,25 +17,27 @@ const questions = [
             {text: "Macchiato", correct: false}, 
             {text: "Latte", correct: false}, 
         ],
-        img: "../img/papu.png"
+        img: "../img/espresso.jpg"
     },
     {
         question: "Tunnista kahvi",
         answers: [
-            {text: "Mocha", correct: false}, 
+            {text: "Flat white", correct: false}, 
             {text: "Americano", correct: false}, 
             {text: "Latte", correct: false}, 
-            {text: "Matchalatte", correct: true}, 
-        ]
+            {text: "Matcha latte", correct: true}, 
+        ],
+        img: "../img/matchalatte.jpg"
     },
     {
         question: "Tunnista kahvi",
         answers: [
             {text: "Macchiato", correct: false}, 
             {text: "Flat white", correct: false}, 
-            {text: "Mocha", correct: false}, 
+            {text: "Cortado", correct: false}, 
             {text: "Americano", correct: true}, 
-        ]
+        ],
+        img: "../img/americano.jpg"
     }
 ];
 
@@ -128,8 +130,6 @@ function showScore(){
     seuraavabutton.innerHTML = "Pelaa uudelleen";
     seuraavabutton.style.display = "block";
 }
-
-
 
 startGame();
 

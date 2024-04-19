@@ -85,7 +85,7 @@ body {
 img {
     width: 16em;
     margin-top: 1.5em;
-
+    border-radius: 12px;
 }
 
 p {
@@ -115,6 +115,7 @@ p {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #482E1D;
     cursor: pointer;
+    transition: all 0.4s;
 }
 
 #buttons .btn:hover:not([disabled]) {
@@ -123,16 +124,14 @@ p {
     color:#F0DAAE;
 }
 
-
-
 #seuraava {
     position: fixed;
+    top: 37.5em;
     bottom: 25px;
-    right: 20px;
-    left: 60em;
+    left: 70em;
     font-size: 16px;
-    width: 6em;
-    height: 2em;
+    width: 7em;
+    height: 3em;
     border-radius: 7px;
     border: 1px solid #f4f4f4;
     background-color: #fff1d4;
@@ -144,14 +143,18 @@ p {
 #seuraava:hover {
   font-weight: bold;
   color: #F3EAD9;
+  background-color: #482E1D;
+  border: 1px solid #482E1D;
 }
 
 .correct {
-  background-color: #15e230;
+  background-color: #0C6B37;
+  color: #F3EAD9;
 }
 
 .incorrect {
-  background-color: #d52b2b;
+  background-color: #BC2023;
+  color: #F3EAD9;
 }
 
 /* Responsiivisuus puhelimelle */
@@ -167,3 +170,12 @@ p {
     }
 }
 
+@media screen and (min-width: 1024px) {
+  .container {
+      width: 30em;
+  }
+
+  #seuraava {
+      left: 70%;
+  }
+}
