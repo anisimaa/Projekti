@@ -1,3 +1,62 @@
+
+/*navbar*/
+/*navbar levitettynä*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f0daae;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+  }
+  
+  /*navbar headeri*/
+  #navbar-header {
+    color: #482e1d;
+    margin-left: 30px;
+  }
+  
+  /*linkit navbarinv sisällä*/
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #482e1d;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /*linkki hover*/
+  .sidenav a:hover {
+    color: #895d2b;
+  }
+  
+  /*navbar ruksi nappi*/
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /*navbar nappi*/
+  span {
+    color: #482e1d;
+    margin-left: 10px;
+  }
+  
+  /*Pienemmille ruuduille: Jos ruutu on pienempi kuin 450px, muuta navbarin tyyliä (ja pienempi fontti koko) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  /*navbar*/
+  
 * {
     margin:0;
     padding: 0;
@@ -10,30 +69,69 @@
     margin-left: auto;
     border-radius: 15px;
     display: flex;
+    position: relative;
     flex-direction: column;
     align-items: center; 
     justify-content: center; 
-    height: 36em;
+    height: 35.5em;
     width: 30em;
 }
 
 body {
-    background-image: url(../img/syksy_1.jpg);
+    background: url(../img/syksy_3.png) no-repeat center center fixed;
     background-size: cover;
-    background-position: center;
 }
 
 img {
     width: 16em;
-    margin-top: 1.5em;
+    margin-top: 1em;
+    position: relative;
 }
 
 p {
     font-size: 28px;
-    margin-top: 2em;
+    margin-top: 3em;
     text-align: center;
 }
 
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  gap: 20px 0;
+  padding: 10%;
+}
+
+.list_item {
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  will-change: transform;
+  background: #F3EAD9;
+  color: #333;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px -1px #F3EAD9, 0 2px 4px -2px #F3EAD9;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.drag-handle {
+  position: absolute;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.drag-handle::after {
+  content: '⠿';
+  font-size: 25px;
+  color: #d4c09a;
+}
 #buttons {
     display: flex;  
     flex-wrap: wrap; 
@@ -56,10 +154,21 @@ p {
     color: #482E1D;
 }
 
-#buttons .button:hover {
-    background-color: #faf3e0;
-    font-weight: bold;
-    color: #895D2B;
+.list_item .is-idle {
+  transition: 0.25s ease transform;
+}
+
+.list_item .is-idle .list_drag-handle {
+  cursor: grab;
+}
+
+.list_item.is-draggable,
+.list_item.is-draggable .drag-handle {
+  cursor: grabbing;
+}
+
+.list_item.is-draggable {
+  z-index: 10;
 }
 
 .seuraava {

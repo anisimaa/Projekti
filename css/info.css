@@ -1,49 +1,110 @@
+/*navbar*/
+/*navbar levitettynä*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f0daae;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+/*navbar headeri*/
+#navbar-header {
+  color: #482e1d;
+  margin-left: 30px;
+}
+
+/*linkit navbarinv sisällä*/
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #482e1d;
+  display: block;
+  transition: 0.3s;
+}
+
+/*linkki hover*/
+.sidenav a:hover {
+  color: #895d2b;
+}
+
+/*navbar ruksi nappi*/
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/*navbar nappi*/
+span {
+  color: #482e1d;
+  margin-left: 10px;
+}
+
+/*Pienemmille ruuduille: Jos ruutu on pienempi kuin 450px, muuta navbarin tyyliä (ja pienempi fontti koko) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/*navbar*/
+
 body {
-    background-image: url(../img/etusivun\ pavut.png);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    height: 100vh;
+  background-image: url(../img/etusivun\ pavut.png);
+}
+
+.kaikki {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  height: 90vh;
 }
 
 .content {
-    background-color: #f0daae;
-    width: 225px;
-    height: 350px;
-    text-align: center;
-    padding: 2em;
+  background-color: #f0daae;
+  width: 225px;
+  height: 350px;
+  text-align: center;
+  padding: 2em;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .footer {
-  background-color: #f0daae;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  padding-top: 1em;
-  padding-left: 0.5em;
-  text-align: start;
-  height: 5em;
+background-color: #f0daae;
+color: #482e1d;
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+padding-top: 1em;
+padding-left: 0.5em;
+text-align: start;
+height: 5em;
 }
 
-.logos {
-  position: fixed;
-  right: 1em;
+.logot {
+position: fixed;
+right: 1em;
 }
 
 .bi-youtube {
-  text-decoration: none;
-  color: #0f1110;
+  color: #482e1d;
 }
 
 .bi-instagram {
-  margin-right: 0.2em;
-  text-decoration: none;
-  color: #0f1110;
+margin-right: 0.2em;
+color: #482e1d;
+
 }
 
 .bi-linkedin {
-  text-decoration: none;
-  color: #0f1110;
+  color: #482e1d;
 }

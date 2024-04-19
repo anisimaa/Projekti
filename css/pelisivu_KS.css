@@ -1,10 +1,68 @@
+/*navbar*/
+/*navbar levitettynä*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f0daae;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+  }
+  
+  /*navbar headeri*/
+  #navbar-header {
+    color: #482e1d;
+    margin-left: 30px;
+  }
+  
+  /*linkit navbarinv sisällä*/
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #482e1d;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  /*linkki hover*/
+  .sidenav a:hover {
+    color: #895d2b;
+  }
+  
+  /*navbar ruksi nappi*/
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /*navbar nappi*/
+  span {
+    color: #482e1d;
+    margin-left: 10px;
+  }
+  
+  /*Pienemmille ruuduille: Jos ruutu on pienempi kuin 450px, muuta navbarin tyyliä (ja pienempi fontti koko) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  /*navbar*/
+
 * {
     margin:0;
     padding: 0;
 }
 
 .container {
-    background-color: #F0DAAE;
+    background-color: #cdcdcd;
     margin-top: 2.5em;
     margin-right: auto;
     margin-left: auto;
@@ -13,24 +71,26 @@
     flex-direction: column;
     align-items: center; 
     justify-content: center; 
-    height: 36em;
-    width: 30em;
+    height: 39em;
+    width: 40em;
 }
 
 body {
-    background-image: url(../img/syksy_1.jpg);
+    background-image: url(../img/talvi_1.jpg);
     background-size: cover;
     background-position: center;
 }
 
 img {
-    width: 16em;
-    margin-top: 1.5em;
+    width: 30em;
+    margin-top: 1em;
+    max-height: 30em;
+    
 }
 
 p {
     font-size: 28px;
-    margin-top: 2em;
+    margin-top: 1em;
     text-align: center;
 }
 
@@ -64,9 +124,9 @@ p {
 
 .seuraava {
     position: fixed;
-    bottom: 25px;
+    bottom: 30px;
     right: 20px;
-    left: 60em;
+    left: 80em;
     font-size: 16px;
     width: 6em;
     height: 2em;
@@ -90,6 +150,25 @@ p {
 
     .seuraava{
         margin-left: 13em;
-        margin-bottom: 2em;
+        margin-bottom: 3em;
     }
 }
+
+
+  .invisible-button {
+    position: absolute;
+    top: 37%;
+    left: 42%;
+    background: none;
+    border: none;
+    color: none;
+    font-size: 0;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+  }
+  
+  .invisible-button:focus {
+    outline: none;
+  }
+  
