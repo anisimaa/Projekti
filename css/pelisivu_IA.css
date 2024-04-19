@@ -77,7 +77,8 @@
 }
 
 body {
-    background-image: url(../img/syksy_1.jpg);
+    background-image: url(../img/sykystestit.jpg);
+    max-height: 800;
     background-size: cover;
     background-position: center;
 }
@@ -125,10 +126,9 @@ p {
 }
 
 #seuraava {
-    position: fixed;
-    top: 37.5em;
-    bottom: 25px;
-    left: 70em;
+    position: relative;
+    left: 70%;
+    bottom: 3.5em;
     font-size: 16px;
     width: 7em;
     height: 3em;
@@ -158,24 +158,100 @@ p {
 }
 
 /* Responsiivisuus puhelimelle */
-@media screen and (max-width: 767px) {
-    .container {
-        margin: 2em 1em;
-        width: auto;
-    }
-
-    .seuraava{
-        margin-left: 13em;
-        margin-bottom: 2em;
-    }
+@media screen and (max-width: 1536px){
+  .container {
+    max-width: 1280px;
+  }
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 1280px){
   .container {
-      width: 30em;
+    max-width: 1024px;
   }
 
   #seuraava {
-      left: 70%;
+    left: 75%;
   }
 }
+
+@media screen and (max-width: 1024px){
+  .container {
+    max-width: 768px;
+  }
+
+  #seuraava {
+    left: 82%;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .container {
+    max-width: 640px;
+  }
+
+  #seuraava {
+    margin: 1em;
+    bottom: 0.4em;
+    left: 40%;
+
+    font-size: 16px;
+    width: 6em;
+    height: 3em;
+    border-radius: 5px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+    .container {
+        max-width: 475px;
+    }
+
+    p{
+      font-size: 24px;
+      margin-top: 2em;
+      text-align: center;
+    }
+
+    img {
+      width: 13em;
+      margin-top: 1.5em;
+      border-radius: 12px;
+  }
+
+  .btn {
+    font-size: 18px;
+    width: 7em;
+    height: 4em;
+    border-radius: 6px;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+
+  #buttons {
+    padding-left: 6em;
+}
+}
+
+@media screen and (max-width: 475px){
+  .container{
+    margin-right: 0.5em;
+    margin-left: 0.5em;
+    height: 34em;
+    width: auto;
+}
+
+.btn {
+  font-size: 16px;
+  width: 6em;
+  height: 3em;
+  border-radius: 6px;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+#buttons {
+  padding-left: 6em;
+}
+  }
+
+
