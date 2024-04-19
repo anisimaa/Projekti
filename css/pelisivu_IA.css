@@ -59,6 +59,7 @@
 * {
     margin:0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .container {
@@ -100,7 +101,7 @@ p {
     padding-left: 5em;
 }
 
-.button{
+.btn{
     position: relative;
     margin-left: 0.5em;
     margin-right: 0.5em;
@@ -113,15 +114,18 @@ p {
     background-color: #F3EAD9;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #482E1D;
+    cursor: pointer;
 }
 
-#buttons .button:hover {
-    background-color: #faf3e0;
+#buttons .btn:hover:not([disabled]) {
     font-weight: bold;
-    color: #895D2B;
+    background-color: #482e1d;
+    color:#F0DAAE;
 }
 
-.seuraava {
+
+
+#seuraava {
     position: fixed;
     bottom: 25px;
     right: 20px;
@@ -133,11 +137,21 @@ p {
     border: 1px solid #f4f4f4;
     background-color: #fff1d4;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.4s;
+    cursor: pointer;
 }
 
-.seuraava:hover {
-    background-color: #efdcb5;
-    border: 2px solid #c2b599;
+#seuraava:hover {
+  font-weight: bold;
+  color: #F3EAD9;
+}
+
+.correct {
+  background-color: #15e230;
+}
+
+.incorrect {
+  background-color: #d52b2b;
 }
 
 /* Responsiivisuus puhelimelle */
