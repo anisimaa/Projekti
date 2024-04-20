@@ -60,6 +60,7 @@
     margin:0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "OmaFontti";
 }
 
 /*laatikko*/
@@ -116,7 +117,6 @@ p {
     border-radius: 7px;
     border: 1px solid #F3EAD9;
     background-color: #F3EAD9;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #482E1D;
     cursor: pointer;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -142,7 +142,6 @@ p {
     border-radius: 7px;
     border: 1px solid #f4f4f4;
     background-color: #fff1d4;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: all 0.2s ease-in-out;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -167,6 +166,11 @@ p {
   background-color: #BC2023;
   border: 1px solid #BC2023;
   color: #F3EAD9;
+}
+/*fontti*/
+@font-face {
+  font-family: "OmaFontti";
+  src: url('../fontit/Lexend-VariableFont_wght.ttf') format('truetype'); 
 }
 
 /* Responsiivisuus */
