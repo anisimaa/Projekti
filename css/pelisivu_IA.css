@@ -96,6 +96,8 @@ p {
     font-size: 28px;
     margin-top: 2em;
     text-align: center;
+    font-family: "OmaFontti";
+    font-weight: 400;
 }
 
 /*vastaus buttons*/
@@ -171,6 +173,11 @@ p {
 @font-face {
   font-family: "OmaFontti";
   src: url('../fontit/Lexend-VariableFont_wght.ttf') format('truetype'); 
+}
+
+@font-face {
+  font-family: "OmaFontti2";
+  src: url('../fontit/Montserrat-VariableFont_wght.ttf') format('truetype'); 
 }
 
 /* Responsiivisuus */
