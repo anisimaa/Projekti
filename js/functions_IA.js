@@ -1,6 +1,6 @@
 const questions = [
     {
-        question: "Tunnista kahvi",
+        question: "Tunnista juoma",
         answers: [
             {text: "Americano", correct: false},
             {text: "Cappuccino", correct: true},
@@ -10,7 +10,7 @@ const questions = [
         img: "../img/cappuccino.jpg"
     },
     {
-        question: "Tunnista kahvi",
+        question: "Tunnista juoma",
         answers: [
             {text: "Espresso", correct: true}, 
             {text: "Mocha", correct: false}, 
@@ -20,7 +20,7 @@ const questions = [
         img: "../img/espresso.jpg"
     },
     {
-        question: "Tunnista kahvi",
+        question: "Tunnista juoma",
         answers: [
             {text: "Flat white", correct: false}, 
             {text: "Americano", correct: false}, 
@@ -30,7 +30,7 @@ const questions = [
         img: "../img/matchalatte.jpg"
     },
     {
-        question: "Tunnista kahvi",
+        question: "Tunnista juoma",
         answers: [
             {text: "Macchiato", correct: false}, 
             {text: "Flat white", correct: false}, 
@@ -49,6 +49,7 @@ const image = document.getElementById('img')
 let currentQuestionIndex = 0;
 let score = 0;
 
+//pelin aloitus nollasta
 function startGame(){
     currentQuestionIndex = 0;
     score = 0;
@@ -59,17 +60,18 @@ function startGame(){
 
 function showQuestion (){
     resetState();
+    //uusi kysymys vaihtuu joka kierros
     let currentQuestion = questions[currentQuestionIndex]
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-
+    //kuva vaihtuu joka kierros
     if(currentQuestion.img){
         image.src = currentQuestion.img;
         image.style.display = "block";
     }else {
         image.style.display = "none"
     }
-
+    //vastausvaihtoehdot muuttuu joka kierroksella
     currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
@@ -82,12 +84,14 @@ function showQuestion (){
     });
 }
 
+//resettaus joka kierroksen jälkeen
 function resetState(){
     while(answerButtons.firstChild){
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
 
+ //oikean ja väärän vastauksen tunnistus
 function selectAnswer (e){
     const selectBtn = e.target;
     const isCorrect = selectBtn.dataset.correct === "true";
@@ -106,6 +110,7 @@ function selectAnswer (e){
     seuraavabutton.style.display = "block";
 }
 
+//seuraavabutton jatkaa seuraavaan kysymykseen tai aloittaa pelin uudelleen
 function handleSeuraavaButton(){
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
@@ -114,7 +119,7 @@ function handleSeuraavaButton(){
         showScore();
     }
 }
-
+//seuraavabutton clickevent
 seuraavabutton.addEventListener("click", () => {
         if(currentQuestionIndex < questions.length){
             handleSeuraavaButton();
@@ -123,9 +128,9 @@ seuraavabutton.addEventListener("click", () => {
         }
     })   
 
+//lopputulokset
 function showScore(){
     resetState();
-
     questionElement.innerHTML = `Sait ${score} pistettä!`;
     seuraavabutton.innerHTML = "Pelaa uudelleen";
     img.src = '../img/kauha.png';

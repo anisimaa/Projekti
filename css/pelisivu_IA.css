@@ -62,6 +62,7 @@
     box-sizing: border-box;
 }
 
+/*laatikko*/
 .container {
     background-color: #F0DAAE;
     margin-top: 2.5em;
@@ -76,6 +77,7 @@
     width: 30em;
 }
 
+/*taustakuva*/
 body {
     background-image: url(../img/sykystestit.jpg);
     max-height: 800;
@@ -95,6 +97,7 @@ p {
     text-align: center;
 }
 
+/*vastaus buttons*/
 #buttons {
     display: flex;  
     flex-wrap: wrap; 
@@ -111,20 +114,24 @@ p {
     width: 7em;
     height: 3.5em;
     border-radius: 7px;
-    border: 1px solid #c2b599;
+    border: 1px solid #F3EAD9;
     background-color: #F3EAD9;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #482E1D;
     cursor: pointer;
-    transition: all 0.4s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
 }
 
 #buttons .btn:hover:not([disabled]) {
     font-weight: bold;
     background-color: #482e1d;
+    border: 1px solid #482e1d;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     color:#F0DAAE;
 }
 
+/*seuraava button*/
 #seuraava {
     position: relative;
     left: 70%;
@@ -136,7 +143,8 @@ p {
     border: 1px solid #f4f4f4;
     background-color: #fff1d4;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    transition: all 0.4s;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
 
@@ -145,19 +153,23 @@ p {
   color: #F3EAD9;
   background-color: #482E1D;
   border: 1px solid #482E1D;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/*oikein & väärin buttons*/
 .correct {
   background-color: #0C6B37;
+  border: 1px solid #0C6B37;
   color: #F3EAD9;
 }
 
 .incorrect {
   background-color: #BC2023;
+  border: 1px solid #BC2023;
   color: #F3EAD9;
 }
 
-/* Responsiivisuus puhelimelle */
+/* Responsiivisuus */
 @media screen and (max-width: 1536px){
   .container {
     max-width: 1280px;
@@ -213,7 +225,7 @@ p {
     }
 
     img {
-      width: 13em;
+      width: 14em;
       margin-top: 1.5em;
       border-radius: 12px;
   }
@@ -250,7 +262,7 @@ p {
 }
 
 #buttons {
-  padding-left: 6em;
+  padding-left: 7.5em;
 }
   }
 
