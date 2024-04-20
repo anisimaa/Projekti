@@ -63,22 +63,18 @@ body {
     background-attachment: fixed;
   }
 
-.container {
-    background-color: green;
-}
-
 #top1 {
-    background-color: pink;
+    background-color: #895d2b;
     width: fit-content;
 }
 
 #top2 {
-    background-color: yellow;
+    background-color: #895d2b;
     width: fit-content;
 }
 
 #top3 {
-    background-color: aqua;
+    background-color: #895d2b;
     width: fit-content;
 }
 
@@ -94,11 +90,12 @@ body {
     height: 400px;
     font-size: large;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: red;
+    background-color: #f0daae;
 }
 
 #valitse {
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
@@ -106,14 +103,13 @@ body {
     padding-right: 1em;
     width: 300px;
     height: 200px;
-    background-color: blue;
+    background-color: #482e1d;
 }
 
 .list {
-    background-color: orange;
+    background-color: #895d2b;
     display: flex;  
     flex-wrap: wrap;
     margin: 0.5em; 
     cursor: grab;
-    background-color: orange;
 }
