@@ -1,5 +1,5 @@
 body {
-    background-image: url('../img/etusivun\ pavut.png');
+    background-image: url('../img/tummatausta.jpg');
 }
 
 /*navbar*/
@@ -61,7 +61,7 @@ body {
   /*navbar*/
 
 .kaikki {
-    display: flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
@@ -71,6 +71,7 @@ body {
 #container {
     background-color: #f0daae;
     padding: 50px;
+    border-radius: 7px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
