@@ -142,8 +142,8 @@ p {
     width: 7em;
     height: 3em;
     border-radius: 7px;
-    border: 1px solid #f4f4f4;
-    background-color: #fff1d4;
+    border: 1px solid #F0DAAE;
+    background-color: #F0DAAE;
     transition: all 0.2s ease-in-out;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
