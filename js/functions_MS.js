@@ -15,35 +15,6 @@ function setup() {
 }
 
 function dragStart(e) {
-    console.log('Drag start')
-
-    if(e.target.classList.contains('js-drag-handle')) {
-        draggableItem = e.target.closest('.js-item')
-    }
-
-    if (!draggableItem) return
-
-    initDraggableItem()
-
-    document.addEventListener('mousemove', drag)
-}
-
-function drag(e) {
-    console.log('Dragging')
-}
-
-function dragEnd() {
-    console.log('Drag end')
-
-    document.removeEventListener('mousemove', drag)
-}
-
-function initDraggableItem() {
-    draggableItem.classList.remove('is-idle')
-    draggableItem.classList.add('is-draggable')
-}
-
-function dragStart(e) {
     if (e.target.classList.contains('js-drag-handle')) {
         draggableItem = e.target.closest('.js-item')
     }
@@ -56,6 +27,30 @@ function dragStart(e) {
     initDraggableItem()
 
     document.addEventListener('mousemove', drag)
+}
+
+function drag(e) {
+    console.log('Dragging')
+    if(!draggableItem) return
+
+    const currentPositionX = e.clientX
+    const currentPositionY = e.clientY
+
+    const pointerOffsetX = currentPositionX - pointerSartX
+    const pointerOffsetY = currentPositionY - pointerStartY
+
+    draggableItem.style.transform = `translate(${pointerOffsetX}px, ${pointerOffsetY}px)`
+}
+
+function dragEnd() {
+    console.log('Drag end')
+
+    document.removeEventListener('mousemove', drag)
+}
+
+function initDraggableItem() {
+    draggableItem.classList.remove('is-idle')
+    draggableItem.classList.add('is-draggable')
 }
 
 setup()
