@@ -68,18 +68,18 @@
     margin-right: auto;
     margin-left: auto;
     margin: auto;
-    padding: 20px;
-    padding-bottom: 220px;
+    padding: 0.5em;
     border-radius: 15px;
     display: relative;
     position: relative;
     flex-direction: column;
     align-items: center; 
     justify-content: center; 
-    height: 35.5em;
+    height: 50em;
     width: 30em;
 }
 
+/*tausta*/
 body {
     background: url(../img/syksy_3.png) no-repeat center center fixed;
     background-size: cover;
