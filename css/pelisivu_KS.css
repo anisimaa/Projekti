@@ -156,21 +156,15 @@ p {
 }
 
 
-  .invisible-button {
-    position: absolute;
-    top: 38%;
-    left: 43%;
+  .invisiblebutton {
     background: red;
-    border: none;
+    border: 10px solid red;
     color: red;
-    font-size: 0;
-    cursor: pointer;
-    height: 30px;
-    width: 30px;
 
   }
+
   
-  .invisible-button:focus {
+  .invisiblebutton:focus {
     outline: none;
   }
   
