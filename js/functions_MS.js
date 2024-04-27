@@ -58,6 +58,8 @@ function drag(e) {
     const pointerOffsetY = currentPositionY - pointerStartY
 
     draggableItem.style.transform = `translate(${pointerOffsetX}px, ${pointerOffsetY}px)`
+
+    updateIdleItemsStateAndPosition()
 }
 
 //palauttaa raahattavan elementin paikoilleen
@@ -98,6 +100,54 @@ function initItemState() {
 
 function getIdleItems() {
     return getAllItems().filter((item) => item.classList.contains('is-idle'))
+}
+
+//elementtien siirtyminen, kun paikkaa vaihdetaan
+function updateIdleItemsStateAndPosition() {
+    const draggableItemRect = draggableItem.getBoundingClientRect()
+    const draggableItemY =
+        draggableItemRect.top + draggableItemRect.height / 2
+    const ITEMS_GAP = 20
+
+// elementin tila (onko paikkaa vaihdettu)
+getIdleItems().forEach((item) => {
+    const itemRect = item.getBoundingClientRect()
+    const itemY = itemRect.top + itemRect.height / 2
+
+    if (isItemAbove(item)) {
+        if (draggableItemY <= itemY) {
+            item.dataset.isToggled = ''
+        } else {
+            delete item.dataset.isToggled
+        }
+    } else {
+        if (draggableItemY >= itemY) {
+            item.dataset.isToggled = ''
+        } else {
+            delete item.dataset.isToggled
+        }
+    }
+})
+
+//elementin uusi positio
+getIdleItems().forEach((item) => {
+    if (isItemToggled(item)) {
+        const direction = isItemAbove(item) ? 1 : -1
+        item.style.transform = `translateY(${
+            direction * (draggableItemRect.height + ITEMS_GAP)
+        }px)`
+    } else {
+        item.style.transform = ''
+    }
+    })
+}
+
+function isItemAbove(item) {
+    return item.hasAttribute('data-is-above')
+}
+
+function isItemToggled(item) {
+    return item.hasAttribute('data-is-toggled')
 }
 
 setup()
