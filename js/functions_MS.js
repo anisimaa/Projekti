@@ -42,9 +42,24 @@ function drag(e) {
     draggableItem.style.transform = `translate(${pointerOffsetX}px, ${pointerOffsetY}px)`
 }
 
+function unsetDraggableItem() {
+    draggableItem.style = null
+    draggableItem.classList.remove('is-draggable')
+    draggableItem.classList.add('is-idle')
+    draggableItem = null
+}
+
 function dragEnd() {
     console.log('Drag end')
+    if(!draggableItem) return
 
+    cleanup()
+}
+
+function cleanup() {
+    unsetDraggableItem()
+
+    
     document.removeEventListener('mousemove', drag)
 }
 
