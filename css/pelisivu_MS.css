@@ -72,10 +72,12 @@ body {
     margin-top: 2.5em;
     margin: auto;
     padding: 0.5em;
+    padding-top: 2.5em;
     border-radius: 15px;
     position: relative;
     flex-direction: column;
     align-items: center; 
+    text-align: center;
     justify-content: center; 
     height: 45em;
     width: 30em;
@@ -89,10 +91,13 @@ body {
     position: relative;
 }
 
-p {
-    font-size: 28px;
-    margin-top: 2em;
+span {
+    font-size: 30px;
     text-align: center;
+}
+
+#juoma {
+	font-size: 30px;
 }
 
 .list {

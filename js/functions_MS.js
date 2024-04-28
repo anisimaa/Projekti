@@ -1,7 +1,31 @@
 //<--Pisteiden lasku ja oikea järjestys-->
 var pisteet;
-const oikein = ['suklaakastike', 'espresso', 'maito', 'koristelu']
+var oikein = [];
 
+//lista pelin juomista ja niiden valmistusvaiheet
+const juomat = [
+	{
+		"nimi": "mocha latte",
+		"kuva": "url",
+		"vaiheet": [
+			'Lisää suklaakastike',
+			'Valuta espresso',
+			'Vaahdota maito',
+			'Koristele'
+		]
+	}, {
+		"nimi": "cappuccino",
+		"kuva": "url",
+		"vaiheet": [
+			'Valuta espresso',
+			'Vaahdota maito',
+			'Kaada maitovaahto',
+			'Latteart'
+		]
+	}
+]
+
+//talletetaan saadut pisteet local storageen
 if (localStorage.pisteet) {
 	pisteet = localStorage.pisteet;
 } else {
@@ -9,15 +33,51 @@ if (localStorage.pisteet) {
 }
 
 
-function getChildrenOrder() {
-	var children = document.getElementById("lista").children;
+randomizeOptions();
+function randomizeOptions() {
+	//haetaan listata satunnainen juoma ja sen tiedot
+	var randomJuoma = juomat[Math.floor(Math.random() * juomat.length)];
+	oikein = randomJuoma["vaiheet"];
 
+	//lisätään juoman nimi tehtävän ohjeistukseen
+	document.getElementById("juoma").innerHTML = randomJuoma["nimi"] + "n"
+
+	//haetaan ja randomisoidaan listan elementit
+	var children = getChildren("lista");
+	children = shuffleArray(children);
+
+	//lisätään tietyn juoman valmistuvaiheet elementteihin
 	for (var i = 0; i < children.length; i++) {
-		if (children[i].id == oikein[i]) {
+		children[i].innerHTML += randomJuoma["vaiheet"][i]
+	}
+}
+
+//funktio, joka sekoittaa listan
+function shuffleArray(array) {
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		const temp = array[i];
+		array[i] = array[j];
+		array[j] = temp;
+	}
+	return array;
+}
+
+//funktio palauttaa parent-divin (idn perusteella) sisällä olevat elementit
+function getChildren(parent) {
+	return document.getElementById(parent).children;
+}
+
+//funktio tarkistaa, onko valmistusvaiheet oikeassa järjestyksessä (oikea järjestys rivillä 40)
+function checkOrder() {
+	var children = getChildren("lista")
+
+	//pisteiden lasku
+	for (var i = 0; i < children.length; i++) {
+		if (children[i].innerHTML.includes(oikein[i])) {
 			pisteet++;
 		}
 	}
-	console.log(pisteet);
 	document.getElementById("viesti").innerHTML = "Pisteitä: " + pisteet;
 	localStorage.pisteet = pisteet;
 }
@@ -49,7 +109,7 @@ let prevRect = {}
 //talletetaan kaikki elementit yhteen funktioon, joka palauttaa elementit items-listamuuttujaan
 function getAllItems() {
 	if (!items?.length) {
-	items = Array.from(listContainer.querySelectorAll('.js-item'))
+		items = Array.from(listContainer.querySelectorAll('.js-item'))
 	}
 	return items
 }
@@ -85,7 +145,7 @@ function setup() {
 
 function dragStart(e) {
 	if (e.target.classList.contains('js-drag-handle')) {			//elementti on	raahattava, jos sillä on js-drag-handle -luokka
-	draggableItem = e.target.closest('.js-item')				//asetetaan muuttujaan lähin elementti, jolla on .js-item -luokka
+		draggableItem = e.target.closest('.js-item')				//asetetaan muuttujaan lähin elementti, jolla on .js-item -luokka
 	}
 
 	if (!draggableItem) return									//jos elementtiä ei löydy, return
@@ -106,8 +166,8 @@ function dragStart(e) {
 //laksetaan liikutettavien elementtien välin suuruuden
 function setItemsGap() {
 	if (getIdleItems().length <= 1) {
-	itemsGap = 0
-	return
+		itemsGap = 0
+		return
 	}
 
 	const item1 = getIdleItems()[0]
@@ -129,9 +189,9 @@ function disablePageScroll() {
 //nollataan attribuutit
 function initItemsState() {
 	getIdleItems().forEach((item, i) => {
-	if (getAllItems().indexOf(draggableItem) > i) {
-		item.dataset.isAbove = ''
-	}
+		if (getAllItems().indexOf(draggableItem) > i) {
+			item.dataset.isAbove = ''
+		}
 	})
 }
 
@@ -165,33 +225,32 @@ function updateIdleItemsStateAndPosition() {
 
 	// elementin tila
 	getIdleItems().forEach((item) => {
-	const itemRect = item.getBoundingClientRect()
-	const itemY = itemRect.top + itemRect.height / 2
-	if (isItemAbove(item)) {
-		if (draggableItemY <= itemY) {
-		item.dataset.isToggled = ''
+		const itemRect = item.getBoundingClientRect()
+		const itemY = itemRect.top + itemRect.height / 2
+		if (isItemAbove(item)) {
+			if (draggableItemY <= itemY) {
+				item.dataset.isToggled = ''
+			} else {
+				delete item.dataset.isToggled
+			}
 		} else {
-		delete item.dataset.isToggled
+			if (draggableItemY >= itemY) {
+				item.dataset.isToggled = ''
+			} else {
+				delete item.dataset.isToggled
+			}
 		}
-	} else {
-		if (draggableItemY >= itemY) {
-		item.dataset.isToggled = ''
-		} else {
-		delete item.dataset.isToggled
-		}
-	}
 	})
 
 	// elementin uusi positio
 	getIdleItems().forEach((item) => {
-	if (isItemToggled(item)) {
-		const direction = isItemAbove(item) ? 1 : -1			//
-		item.style.transform = `translateY(${
-		direction * (draggableItemRect.height + itemsGap)
-		}px)`
-	} else {
-		item.style.transform = ''
-	}
+		if (isItemToggled(item)) {
+			const direction = isItemAbove(item) ? 1 : -1			//
+			item.style.transform = `translateY(${direction * (draggableItemRect.height + itemsGap)
+				}px)`
+		} else {
+			item.style.transform = ''
+		}
 	})
 }
 
@@ -208,45 +267,44 @@ function applyNewItemsOrder(e) {
 	const reorderedItems = []
 
 	getAllItems().forEach((item, index) => {
-	if (item === draggableItem) {
-		return
-	}
-	if (!isItemToggled(item)) {
-		reorderedItems[index] = item
-		return
-	}
-	const newIndex = isItemAbove(item) ? index + 1 : index - 1
-	reorderedItems[newIndex] = item
+		if (item === draggableItem) {
+			return
+		}
+		if (!isItemToggled(item)) {
+			reorderedItems[index] = item
+			return
+		}
+		const newIndex = isItemAbove(item) ? index + 1 : index - 1
+		reorderedItems[newIndex] = item
 	})
 
 	for (let index = 0; index < getAllItems().length; index++) {
-	const item = reorderedItems[index]
-	if (typeof item === 'undefined') {
-		reorderedItems[index] = draggableItem
-	}
+		const item = reorderedItems[index]
+		if (typeof item === 'undefined') {
+			reorderedItems[index] = draggableItem
+		}
 	}
 
 	reorderedItems.forEach((item) => {
-	listContainer.appendChild(item)
+		listContainer.appendChild(item)
 	})
-	
+
 	draggableItem.style.transform = ''
 
 	requestAnimationFrame(() => {
-	const rect = draggableItem.getBoundingClientRect()
-	const yDiff = prevRect.y - rect.y
-	const currentPositionX = e.clientX || e.changedTouches?.[0]?.clientX
-	const currentPositionY = e.clientY || e.changedTouches?.[0]?.clientY
+		const rect = draggableItem.getBoundingClientRect()
+		const yDiff = prevRect.y - rect.y
+		const currentPositionX = e.clientX || e.changedTouches?.[0]?.clientX
+		const currentPositionY = e.clientY || e.changedTouches?.[0]?.clientY
 
-	const pointerOffsetX = currentPositionX - pointerStartX
-	const pointerOffsetY = currentPositionY - pointerStartY
+		const pointerOffsetX = currentPositionX - pointerStartX
+		const pointerOffsetY = currentPositionY - pointerStartY
 
-	draggableItem.style.transform = `translate(${pointerOffsetX}px, ${
-		pointerOffsetY + yDiff
-	}px)`
-	requestAnimationFrame(() => {
-		unsetDraggableItem()
-	})
+		draggableItem.style.transform = `translate(${pointerOffsetX}px, ${pointerOffsetY + yDiff
+			}px)`
+		requestAnimationFrame(() => {
+			unsetDraggableItem()
+		})
 	})
 }
 
@@ -272,9 +330,9 @@ function unsetDraggableItem() {
 //poistetaan väliaikaiset attribuutit
 function unsetItemState() {
 	getIdleItems().forEach((item, i) => {
-	delete item.dataset.isAbove
-	delete item.dataset.isToggled
-	item.style.transform = ''
+		delete item.dataset.isAbove
+		delete item.dataset.isToggled
+		item.style.transform = ''
 	})
 }
 
