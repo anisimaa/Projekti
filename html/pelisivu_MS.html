@@ -119,28 +119,34 @@
       <p>Järjestä mocha latten valmistusvaiheet oikeaan järjestykseen.</p>
     </div>
 
-    <div><img src="../img/papu.png" /></div>
+    <div class="centerWrapper">
+      <img class="papu" src="../img/papu.png" />
+    </div>
 
-    <div class="list js-list">
-      <div class="list_item is-idle js-item">
+    <div id="lista" class="list js-list">
+      <div id="espresso" class="list_item is-idle js-item">
         Valuta espresso
         <div class="drag-handle js-drag-handle"></div>
       </div>
-      <div class="list_item is-idle js-item">
+      <div id="suklaakastike" class="list_item is-idle js-item">
         Lisää suklaakastike
         <div class="drag-handle js-drag-handle"></div>
       </div>
-      <div class="list_item is-idle js-item">
+      <div id="koristelu" class="list_item is-idle js-item">
         Koristele
         <div class="drag-handle js-drag-handle"></div>
       </div>
-      <div class="list_item is-idle js-item">
+      <div id="maito" class="list_item is-idle js-item">
         Vaahdota maito
         <div class="drag-handle js-drag-handle"></div>
       </div>
+
+    </div>
+    <div id="viesti">
+      
     </div>
   </div>
-  <div class="seuraavabutton">
+  <div class="centerWrapper">
     <button class="seuraava">Seuraava</button>
   </div>
   <script src="../js/functions_MS.js"></script>
