@@ -50,7 +50,7 @@ body {
   }
   
   /*navbar nappi*/
-  span {
+  .openNav {
     color: #482e1d;
     margin-left: 10px;
   }
@@ -84,21 +84,15 @@ body {
     width: 30em;
 }
 
-
-
-.papu {
-    max-width: 45%;
-    margin: 1em;
-    position: relative;
-}
-
 span {
     font-size: 30px;
     text-align: center;
+	max-width: 100%;
 }
 
 #juoma {
 	font-size: 30px;
+	max-width: 100%;
 }
 
 .list {
