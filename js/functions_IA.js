@@ -1,3 +1,4 @@
+//kysymykset ja vastaukset
 const questions = [
     {
         question: "Tunnista juoma",
@@ -57,7 +58,6 @@ function startGame(){
     showQuestion();
 }
 
-
 function showQuestion (){
     resetState();
     //uusi kysymys vaihtuu joka kierros
@@ -91,7 +91,7 @@ function resetState(){
     }
 }
 
- //oikean ja väärän vastauksen tunnistus
+ //oikean ja väärän vastauksen tunnistus + pisteiden laskua
 function selectAnswer (e){
     const selectBtn = e.target;
     const isCorrect = selectBtn.dataset.correct === "true";
@@ -110,7 +110,7 @@ function selectAnswer (e){
     seuraavabutton.style.display = "block";
 }
 
-//seuraavabutton jatkaa seuraavaan kysymykseen tai aloittaa pelin uudelleen
+//näytetään seuraava kysymys tai  loppupisteet
 function handleSeuraavaButton(){
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
@@ -119,21 +119,26 @@ function handleSeuraavaButton(){
         showScore();
     }
 }
-//seuraavabutton clickevent
+//seuraavabutton menee seuraavaan kysymykseen tai jatkaa seuraavaan peliin
 seuraavabutton.addEventListener("click", () => {
         if(currentQuestionIndex < questions.length){
             handleSeuraavaButton();
         }else {
-            startGame();
+            nextPage();
         }
     })   
+
+//siirtyy lopuksi seuraavalle sivulle
+function nextPage () {
+       location.href = "../html/pelisivu_KS.html";
+}
 
 //lopputulokset
 function showScore(){
     resetState();
     questionElement.innerHTML = `Sait ${pisteet} pistettä!`;
     localStorage.pisteet = pisteet;
-    seuraavabutton.innerHTML = "Pelaa uudelleen";
+    seuraavabutton.innerHTML = "Seuraava peli";
     img.src = '../img/kauha.png';
     seuraavabutton.style.display = "block";
 }
