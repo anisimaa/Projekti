@@ -66,5 +66,80 @@
     background-color: #895d2b;
     width: fit-content;
     margin: 0 auto;
+    margin-top: 4em;
     padding: 1em;
+    border-radius: 15px;
+  }
+
+  #nextpage {
+    text-decoration: none;
+  }
+
+  #seuraava {
+    display: block;
+    margin: 20px auto 0;
+    font-size: 16px;
+    width: 7em;
+    height: 3em;
+    border-radius: 7px;
+    border: 1px solid #F0DAAE;
+    background-color: #F0DAAE;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  #seuraava:hover {
+    font-weight: bold;
+    color: #F3EAD9;
+    background-color: #482E1D;
+    border: 1px solid #482E1D;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  #yksisentti {
+    text-decoration: none;
+    background-color: #f0daae;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  #pienta {
+    text-decoration: none;
+    background-color: #f0daae;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  #kuusikymmenta {
+    text-decoration: none;
+    background-color: #f0daae;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  #tarkista {
+    font-size: 16px;
+    width: 5em;
+    height: 2em;
+    border-radius: 7px;
+    border: 1px solid #F0DAAE;
+    background-color: #F0DAAE;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  #tarkista:hover {
+    font-weight: bold;
+    color: #F3EAD9;
+    background-color: #482E1D;
+    border: 1px solid #482E1D;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  #score {
+    font-weight: 600;
   }
