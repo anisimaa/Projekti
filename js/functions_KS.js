@@ -54,6 +54,10 @@ seuraavabutton.addEventListener('click', function() {
     showScore();
 });
 
+function nextPage () {
+    location.href = "../html/pelisivu_MS.html";
+ }
+
 function showScore() {
   var pointScoreContainer = document.getElementById('pointcontainer');
   pointScoreContainer.innerText = "Sait " + pisteet + " pistettä!";
@@ -61,4 +65,12 @@ function showScore() {
   pisteet = 0;
   coffeeInfo.style.display = 'none';
 }
+
+seuraavabutton.addEventListener("click", () => {
+    if(currentQuestionIndex < questions.length){
+        handleSeuraavaButton();
+    }else {
+        nextPage();
+    }
+})   
 

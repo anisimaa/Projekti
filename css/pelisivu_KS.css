@@ -64,7 +64,7 @@
 
 .container {
     background-color: #cdcdcd;
-    margin-top: 2.5em;
+    margin-top: 3em;
     margin-right: auto;
     margin-left: auto;
     border-radius: 15px;
@@ -73,7 +73,7 @@
     align-items: center; 
     justify-content: center; 
     height: 39em;
-    width: 40em;
+    width: 41em;
 }
 
 body {
