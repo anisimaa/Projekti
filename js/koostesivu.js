@@ -7,14 +7,13 @@ function updateTotalScore() {
 }*/
 
 // Hae tallennetut pisteet local storagesta
-var tallennetutPisteet = localStorage.getItem('pisteet');
+var totalScore = localStorage.getItem('pisteet');
 
 // Tarkista, onko pisteitä tallennettu
-if (tallennetutPisteet !== null) {
+if (totalScore !== null) {
     // Muunna tallennetut pisteet takaisin numeroksi tarvittaessa
-    var pisteet = parseInt(tallennetutPisteet);
+    var pisteet = parseInt(totalScore);
 
-    // Tee jotain pisteillä, esimerkiksi näytä ne käyttäjälle
     console.log("Tallennetut pisteet: " + pisteet);
 } else {
     // Jos pisteitä ei ole tallennettu, voit esimerkiksi näyttää oletusarvon
