@@ -52,7 +52,7 @@ function randomizeOptions() {
 	}
 }
 
-//funktio, joka sekoittaa listan
+// funktio, joka sekoittaa listan
 function shuffleArray(array) {
 	for (let i = array.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1));
@@ -63,16 +63,16 @@ function shuffleArray(array) {
 	return array;
 }
 
-//funktio palauttaa parent-divin (idn perusteella) sisällä olevat elementit
+// funktio palauttaa id:n perusteella parent-divin sisällä olevat elementit
 function getChildren(parent) {
 	return document.getElementById(parent).children;
 }
 
-//funktio tarkistaa, onko valmistusvaiheet oikeassa järjestyksessä (oikea järjestys rivillä 40)
+// funktio tarkistaa, onko valmistusvaiheet oikeassa järjestyksessä (oikea järjestys rivillä 40)
 function checkOrder() {
 	var children = getChildren("lista")
 
-	//pisteiden lasku
+	// pisteiden lasku
 	for (var i = 0; i < children.length; i++) {
 		if (children[i].innerHTML.includes(oikein[i])) {
 			pisteet++;
@@ -84,29 +84,29 @@ function checkOrder() {
 
 
 
-//<--Nimetään muuttujat-->
+// <--Nimetään muuttujat-->
 
-//listContainer sisältää listan järjestettävistä elementeistä
+// listContainer sisältää listan järjestettävistä elementeistä
 let listContainer
 
-//muuttuja elementille, jota liikutetaan
+// muuttuja elementille, jota liikutetaan
 let draggableItem
 
-//muuttujat kursorin koordinaateille
+// muuttujat kursorin koordinaateille
 let pointerStartX
 let pointerStartY
 
 let itemsGap = 0
 
-//muuttuja listalle, jonka elementit järjestetään
+// muuttuja listalle, jonka elementit järjestetään
 let items = []
 
 
 let prevRect = {}
 
-//<--Funktiot-->
+// <--Funktiot-->
 
-//talletetaan kaikki elementit yhteen funktioon, joka palauttaa elementit items-listamuuttujaan
+// talletetaan kaikki elementit yhteen funktioon, joka palauttaa elementit items-listamuuttujaan
 function getAllItems() {
 	if (!items?.length) {
 		items = Array.from(listContainer.querySelectorAll('.js-item'))
@@ -132,7 +132,7 @@ function isItemToggled(item) {
 function setup() {
 	listContainer = document.querySelector('.js-list')
 
-	if (!listContainer) return									//jos ei parent-diviä löydy, return
+	if (!listContainer) return										//jos parent-diviä ei löydy, return
 
 	listContainer.addEventListener('mousedown', dragStart)
 	listContainer.addEventListener('touchstart', dragStart)
@@ -148,13 +148,13 @@ function dragStart(e) {
 		draggableItem = e.target.closest('.js-item')				//asetetaan muuttujaan lähin elementti, jolla on .js-item -luokka
 	}
 
-	if (!draggableItem) return									//jos elementtiä ei löydy, return
+	if (!draggableItem) return										//jos elementtiä ei löydy, return
 
 	pointerStartX = e.clientX || e.touches?.[0]?.clientX			//kursorin koordinaatit, toiminta myös kosketusnäytöllä
 	pointerStartY = e.clientY || e.touches?.[0]?.clientY
 
 	setItemsGap()
-	disablePageScroll()
+	//disablePageScroll()
 	initDraggableItem()
 	initItemsState()
 	prevRect = draggableItem.getBoundingClientRect()
@@ -163,7 +163,7 @@ function dragStart(e) {
 	document.addEventListener('touchmove', drag, { passive: false })
 }
 
-//laksetaan liikutettavien elementtien välin suuruuden
+// lasketaan liikutettavien elementtien välin suuruuden
 function setItemsGap() {
 	if (getIdleItems().length <= 1) {
 		itemsGap = 0
@@ -179,14 +179,14 @@ function setItemsGap() {
 	itemsGap = Math.abs(item1Rect.bottom - item2Rect.top)
 }
 
-//estetään sivun vieritys
+// estetään sivun vieritys
 function disablePageScroll() {
 	document.body.style.overflow = 'hidden'
 	document.body.style.touchAction = 'none'
 	document.body.style.userSelect = 'none'
 }
 
-//nollataan attribuutit
+// nollataan attribuutit
 function initItemsState() {
 	getIdleItems().forEach((item, i) => {
 		if (getAllItems().indexOf(draggableItem) > i) {
@@ -195,16 +195,16 @@ function initItemsState() {
 	})
 }
 
-//raahauksen aloitus, luokat
+// raahauksen aloitus, luokat
 function initDraggableItem() {
 	draggableItem.classList.remove('is-idle')
 	draggableItem.classList.add('is-draggable')
 }
 
 
-//raahausfunktio
+// <--raahausfunktio-->
 function drag(e) {
-	if (!draggableItem) return			//jos raahattavaa elementtiä ei löydy, return
+	if (!draggableItem) return																		// jos raahattavaa elementtiä ei löydy, return
 
 	e.preventDefault()
 
@@ -214,7 +214,7 @@ function drag(e) {
 	const pointerOffsetX = clientX - pointerStartX
 	const pointerOffsetY = clientY - pointerStartY
 
-	draggableItem.style.transform = `translate(${pointerOffsetX}px, ${pointerOffsetY}px)`			//raahattava elementti liikuu kursorin mukana
+	draggableItem.style.transform = `translate(${pointerOffsetX}px, ${pointerOffsetY}px)`			// raahattava elementti liikuu kursorin mukana
 
 	updateIdleItemsStateAndPosition()
 }
@@ -308,7 +308,7 @@ function applyNewItemsOrder(e) {
 	})
 }
 
-//nollataan elementin tila
+// nollataan elementin tila
 function cleanup() {
 	itemsGap = 0
 	items = []
@@ -319,7 +319,7 @@ function cleanup() {
 	document.removeEventListener('touchmove', drag)
 }
 
-//raahauksen lopetus, luokat
+// raahauksen lopetus, luokat
 function unsetDraggableItem() {
 	draggableItem.style = null
 	draggableItem.classList.remove('is-draggable')
@@ -327,7 +327,7 @@ function unsetDraggableItem() {
 	draggableItem = null
 }
 
-//poistetaan väliaikaiset attribuutit
+// poistetaan väliaikaiset attribuutit
 function unsetItemState() {
 	getIdleItems().forEach((item, i) => {
 		delete item.dataset.isAbove
@@ -336,7 +336,7 @@ function unsetItemState() {
 	})
 }
 
-//aktivoidaan sivun vieritys
+// aktivoidaan sivun vieritys
 function enablePageScroll() {
 	document.body.style.overflow = ''
 	document.body.style.touchAction = ''
