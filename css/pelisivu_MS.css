@@ -65,6 +65,7 @@ body {
 * {
     margin:0;
     padding: 0;
+	font-family: "Inter";
 }
 
 .container {
@@ -160,6 +161,12 @@ span {
     background-color: #efdcb5;
     border: 2px solid #c2b599;
 }
+
+/*fontti*/
+@font-face {
+	font-family: "Inter";
+	src: url('../fonts/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
+  }
 
 /* Responsiivisuus puhelimelle */
 @media screen and (max-width: 767px) {

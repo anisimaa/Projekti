@@ -45,7 +45,7 @@
 
 /*navbar nappi*/
 span {
-  color: #482e1d;
+  color: bisque;
   margin-left: 10px;
 }
 
@@ -56,8 +56,18 @@ span {
 }
 /*navbar*/
 
+/*fontti*/
+@font-face {
+  font-family: "Inter";
+  src: url('../fonts/Inter-VariableFont_slnt\,wght.ttf') format('truetype');
+}
+
 body {
-  background-image: url(../img/etusivun\ pavut.png);
+  background-image: url('../img/tummatausta.jpg');
+}
+
+* {
+  font-family: "Inter";
 }
 
 .kaikki {
@@ -65,46 +75,89 @@ body {
   align-items: center;
   justify-content: center;
   margin: 0 auto;
-  height: 90vh;
+  height: 75vh;
+}
+
+p, h2, h5 {
+  text-align: center;
+  opacity: 1;
 }
 
 .content {
-  background-color: #f0daae;
-  width: 225px;
-  height: 350px;
-  text-align: center;
-  padding: 2em;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #482E1D;
+    padding: 50px;
+    color: bisque;
+    border-radius: 7px;
+    max-width: 30em;
+    opacity: 0.8;
 }
 
+/*seuraava button*/
+button {
+  position: relative;
+  top: 1em;
+  left: 38%;
+  bottom: 3.5em;
+  font-size: 16px;
+  width: 7em;
+  height: 3em;
+  border-radius: 7px;
+  border: 1px solid #F0DAAE;
+  background-color: #F0DAAE;
+  color: #482E1D;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-weight: 600;
+  opacity: 1;
+}
+
+button:hover {
+font-weight: bold;
+color: #F3EAD9;
+background-color: #5d3e29;
+border: 1px solid #5d3e29;
+box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/*footer*/
 .footer {
-background-color: #f0daae;
-color: #482e1d;
-position: fixed;
-left: 0;
-bottom: 0;
-width: 100%;
-padding-top: 1em;
-padding-left: 0.5em;
-text-align: start;
-height: 5em;
-}
+    background-color:  #482E1D;
+    color:bisque;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding-top: 1em;
+    padding-left: 0.5em;
+    height: 4em;
+    opacity: 0.9;
+    }
+    
+    .logot {
+    position: fixed;
+    right: 1em;
+    }
+    
+    .bi-youtube {
+      color: bisque;
+    }
+    
+    .bi-instagram {
+    margin-right: 0.3em;
+    color: bisque;
+    
+    }
+    
+    .bi-linkedin {
+      color: bisque;
+    }
 
-.logot {
-position: fixed;
-right: 1em;
-}
+    .bi-c-circle {
+      opacity: 0.6;
+    }
 
-.bi-youtube {
-  color: #482e1d;
-}
-
-.bi-instagram {
-margin-right: 0.2em;
-color: #482e1d;
-
-}
-
-.bi-linkedin {
-  color: #482e1d;
-}
+    b {
+      opacity: 0.6;
+    }
+/*footer*/
