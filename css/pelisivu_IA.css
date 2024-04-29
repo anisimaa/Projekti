@@ -80,9 +80,8 @@
 /*taustakuva*/
 body {
     background-image: url(../img/sykystestit.jpg);
-    max-height: 800;
     background-size: cover;
-    background-position: center;
+    background-attachment: fixed;
 }
 
 img {
