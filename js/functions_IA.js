@@ -139,7 +139,7 @@ function showScore(){
     questionElement.innerHTML = `Sait ${pisteet} pistettä!`;
     localStorage.pisteet = pisteet;
     seuraavabutton.innerHTML = "Seuraava peli";
-    img.src = '../img/kauha.png';
+    img.src = '../img/kuppit.jpg';
     seuraavabutton.style.display = "block";
 }
 

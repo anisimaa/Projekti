@@ -83,6 +83,10 @@ p, h2 {
   opacity: 1;
 }
 
+h2 {
+  color: rgb(252, 234, 212);
+}
+
 #container {
     background-color: #482E1D;
     padding: 50px;
@@ -90,6 +94,7 @@ p, h2 {
     border-radius: 7px;
     max-width: 30em;
     opacity: 0.8;
+    border-radius: 9px;
 }
 
 /*seuraava button*/
@@ -102,21 +107,20 @@ button {
   width: 7em;
   height: 3em;
   border-radius: 7px;
-  border: 1px solid #F0DAAE;
-  background-color: #F0DAAE;
-  color: #482E1D;
+  background-color: #81614c;
+  border: 1px solid #81614c;
+  color: rgb(252, 234, 212);
   transition: all 0.2s ease-in-out;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   font-weight: 600;
-  opacity: 1;
 }
 
 button:hover {
 font-weight: bold;
-color: #F3EAD9;
-background-color: #5d3e29;
-border: 1px solid #5d3e29;
+color: #482E1D;
+background-color: #F0DAAE;
+border: 1px solid #F0DAAE;
 box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 }
 
@@ -126,6 +130,7 @@ box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     color:bisque;
     position: fixed;
     left: 0;
+    right: 0;
     bottom: 0;
     width: 100%;
     padding-top: 1em;
