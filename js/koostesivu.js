@@ -6,17 +6,17 @@ function updateTotalScore() {
     totalScoreElement.innerText = "Pisteesi yhteensä: " + totalScore;
 }*/
 
-// Hae tallennetut pisteet local storagesta
+// Haetaan tallennetut pisteet local storagesta
 var totalScore = localStorage.getItem('pisteet');
 
-// Tarkista, onko pisteitä tallennettu
+// Tarkistetaan, onko pisteitä tallennettu
 if (totalScore !== null) {
-    // Muunna tallennetut pisteet takaisin numeroksi tarvittaessa
+    // Muunnetaan tallennetut pisteet takaisin numeroksi tarvittaessa
     var pisteet = parseInt(totalScore);
 
     console.log("Tallennetut pisteet: " + pisteet);
 } else {
-    // Jos pisteitä ei ole tallennettu, voit esimerkiksi näyttää oletusarvon
+    // Jos pisteitä ei ole tallennettu, näytetään viesti
     console.log("Ei tallennettuja pisteitä.");
 }
 
