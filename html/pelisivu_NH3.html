@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/pelisivu_NH.css">
+    <title>Pelisivu 3</title>
+    <link rel="stylesheet" href="../css/pelisivu_NH3.css">
 </head>
 <body>
 
@@ -90,56 +90,56 @@
         </a>
         </p>
     </div>
-    <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    <span id="mennu" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
 
     <script src="../js/navbar.js"></script>
 </nav>
 <!--navigointi-->
 
-<div class="container">
+<div class="content">
+    <h1>Flat White valmistusohje</h1>
+    <form id="form1">
+    
+        <h2>Valmistaessa flat whitea, kuinka lämmintä vaahdotetun maidon pitäisi olla?</h2>
+        <select id="kuusikymmenta">
+            <option value="0">Valitse yksi:</option>
+            <option value="0">55-60</option>
+            <option value="1">60-65</option>
+            <option value="0">65-70</option>
+            <option value="0">70-75</option>
+        </select>
+        
+        
+        <h2>Minkä kokoista kannua vaahdottaessa pitää käyttää?</h2>
+        <select id="pienta">
+            <option value="0">Valitse yksi:</option>
+            <option value="1">pieni</option>
+            <option value="0">keskikoko</option>
+            <option value="0">iso</option>
+            <option value="0">koomisen isoa</option>
+        </select>
+        
+        <h2>Kuinka paksu pitäisi vaahtokerroksen olla?</h2>
+        <select id="yksisentti">
+            <option value="0">Valitse yksi:</option>
+            <option value="0">0,2 - 0,5 cm</option>
+            <option value="1">0,5 - 1,0 cm</option>
+            <option value="0">1 - 1,5 cm</option>
+            <option value="0">1 - 2 cm</option>
+        </select>
 
-  <div id="top">Valmistaessasi flat whitea vaahdota maito _______ asteiseksi ____ kannulla. Vaahtokerroksen tulisi olla ____ paksu.</div>
+        <p><button type="submit" value="Submit">Tarkista</button></p>
+        
+        </form>
 
-  <div id="valitse">
-    <div class="list" draggable="true">pienellä</div>
-    <div class="list" draggable="true">keskikokoisella</div>
-    <div class="list" draggable="true">isolla</div>
-    <div class="list" draggable="true">55-60</div>
-    <div class="list" draggable="true">60-65</div>
-    <div class="list" draggable="true">65-70</div>
-    <div class="list" draggable="true">0,5-1 cm</div>
-    <div class="list" draggable="true">1-1,5 cm</div>
-    <div class="list" draggable="true">1-2 cm</div>
-  </div>
+        <p>Sait <span id="grade">__</span> pistettä</p>
+        <p id="grade2"></p>
+
+        
 </div>
 
-<script>
-  let lists = document.getElementsByClassName("list");
-  let topBox = document.getElementById("top");
-  let valitseBox = document.getElementById("valitse");
-
-  for(list of lists){
-    list.addEventListener("dragstart", function(e){
-      let selected = e.target;
-
-      topBox.addEventListener("dragover", function(e){
-        e.preventDefault();
-      });
-      topBox.addEventListener("drop", function(e){
-        topBox.appendChild(selected);
-        selected = null;
-      });
-      
-      valitseBox.addEventListener("dragover", function(e){
-        e.preventDefault();
-      });
-      valitseBox.addEventListener("drop", function(e){
-        valitseBox.appendChild(selected);
-        selected = null;
-      });
-    })
-  }
-</script>
+<script src="../js/functions_NH.js"></script>
+    
 
 </body>
 </html>

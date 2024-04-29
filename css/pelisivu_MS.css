@@ -1,3 +1,8 @@
+/*tausta*/
+body {
+  background: url(../img/syksy_3.png) no-repeat center center fixed;
+  background-size: cover;
+}
 
 /*navbar*/
 /*navbar levitettynä*/
@@ -65,45 +70,45 @@
 .container {
     background-color: #F0DAAE;
     margin-top: 2.5em;
-    margin-right: auto;
-    margin-left: auto;
+    margin: auto;
+    padding: 0.5em;
+    padding-top: 2.5em;
     border-radius: 15px;
-    display: flex;
     position: relative;
     flex-direction: column;
     align-items: center; 
+    text-align: center;
     justify-content: center; 
-    height: 35.5em;
+    height: 45em;
     width: 30em;
 }
 
-body {
-    background: url(../img/syksy_3.png) no-repeat center center fixed;
-    background-size: cover;
-}
 
-img {
-    width: 16em;
-    margin-top: 1em;
+
+.papu {
+    max-width: 45%;
+    margin: 1em;
     position: relative;
 }
 
-p {
-    font-size: 28px;
-    margin-top: 3em;
+span {
+    font-size: 30px;
     text-align: center;
+}
+
+#juoma {
+	font-size: 30px;
 }
 
 .list {
   display: flex;
+  position: relative;
   flex-direction: column;
-  width: 70%;
   gap: 20px 0;
   padding: 10%;
 }
 
 .list_item {
-  width: 100%;
   padding: 15px;
   display: flex;
   align-items: center;
@@ -132,33 +137,12 @@ p {
   font-size: 25px;
   color: #d4c09a;
 }
-#buttons {
-    display: flex;  
-    flex-wrap: wrap; 
-    padding: 2em;
-    padding-left: 5em;
-}
 
-.button{
-    position: relative;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    margin-bottom: 0.5em;
-    font-size: 20px;
-    width: 7em;
-    height: 3.5em;
-    border-radius: 7px;
-    border: 1px solid #c2b599;
-    background-color: #F3EAD9;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #482E1D;
-}
-
-.list_item .is-idle {
+.list_item.is-idle {
   transition: 0.25s ease transform;
 }
 
-.list_item .is-idle .list_drag-handle {
+.list_item.is-idle .list_drag-handle {
   cursor: grab;
 }
 
@@ -171,19 +155,6 @@ p {
   z-index: 10;
 }
 
-.seuraava {
-    position: fixed;
-    bottom: 25px;
-    right: 20px;
-    left: 60em;
-    font-size: 16px;
-    width: 6em;
-    height: 2em;
-    border-radius: 7px;
-    border: 1px solid #f4f4f4;
-    background-color: #fff1d4;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
 .seuraava:hover {
     background-color: #efdcb5;
@@ -201,4 +172,22 @@ p {
         margin-left: 13em;
         margin-bottom: 2em;
     }
+}
+
+.seuraava {
+  margin-top: 30px;
+  font-size: 16px;
+  width: 6em;
+  height: 2em;
+  border-radius: 7px;
+  border: 1px solid #f4f4f4;
+  background-color: #fff1d4;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.centerWrapper {
+  text-align: center;
+  justify-content: center; 
+  width: 100%;
+  margin: auto;
 }
