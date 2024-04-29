@@ -47,12 +47,12 @@ const seuraavabutton = document.getElementById('seuraava')
 const image = document.getElementById('img')
 
 let currentQuestionIndex = 0;
-let score = 0;
+let pisteet = 0;
 
 //pelin aloitus nollasta
 function startGame(){
     currentQuestionIndex = 0;
-    score = 0;
+    pisteet = 0;
     seuraavabutton.innerHTML = "Seuraava";
     showQuestion();
 }
@@ -97,7 +97,7 @@ function selectAnswer (e){
     const isCorrect = selectBtn.dataset.correct === "true";
     if(isCorrect){
         selectBtn.classList.add("correct");
-        score++;
+        pisteet++;
     }else {
         selectBtn.classList.add("incorrect");
     }
@@ -131,19 +131,20 @@ seuraavabutton.addEventListener("click", () => {
 //lopputulokset
 function showScore(){
     resetState();
-    questionElement.innerHTML = `Sait ${score} pistettä!`;
+    questionElement.innerHTML = `Sait ${pisteet} pistettä!`;
     seuraavabutton.innerHTML = "Pelaa uudelleen";
     img.src = '../img/kauha.png';
     seuraavabutton.style.display = "block";
 }
 
-startGame();
-
-var pisteet;
-var oikein = [];
 //talletetaan saadut pisteet local storageen
 if (localStorage.pisteet) {
 	pisteet = localStorage.pisteet;
 } else {
 	pisteet = 0;
 }
+
+startGame();
+
+
+
