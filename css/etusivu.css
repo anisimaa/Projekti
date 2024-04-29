@@ -128,13 +128,13 @@ box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
     width: 100%;
     padding-top: 1em;
     padding-left: 0.5em;
-    text-align: start;
     height: 4em;
     }
     
     .logot {
     position: fixed;
     right: 1em;
+    text-decoration: none;
     }
     
     .bi-youtube {
@@ -153,6 +153,7 @@ box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
 
     .bi-c-circle {
       opacity: 0.6;
+      top: 2em;
     }
 
     b {
