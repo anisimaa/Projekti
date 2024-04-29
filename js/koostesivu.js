@@ -21,3 +21,4 @@ if (totalScore !== null) {
 }
 
 document.getElementById("viesti").innerHTML = "Pisteitä: " + pisteet;
+
