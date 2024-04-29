@@ -139,3 +139,11 @@ function showScore(){
 
 startGame();
 
+var pisteet;
+var oikein = [];
+//talletetaan saadut pisteet local storageen
+if (localStorage.pisteet) {
+	pisteet = localStorage.pisteet;
+} else {
+	pisteet = 0;
+}
