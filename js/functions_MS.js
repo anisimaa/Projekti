@@ -1,3 +1,8 @@
+function updateScore(peliId, pisteet) {
+	localStorage.setItem("peli" + peliId, pisteet)
+}
+updateScore(3, 0)
+
 //<--Pisteiden lasku ja oikea järjestys-->
 var pisteet;
 var oikein = [];
@@ -25,17 +30,11 @@ const juomat = [
 	}
 ]
 
-//talletetaan saadut pisteet local storageen
-if (localStorage.pisteet) {
-	pisteet = localStorage.pisteet;
-} else {
-	pisteet = 0;
-}
 
 
 randomizeOptions();
 function randomizeOptions() {
-	//haetaan listata satunnainen juoma ja sen tiedot
+	//haetaan listalta satunnainen juoma ja sen tiedot
 	var randomJuoma = juomat[Math.floor(Math.random() * juomat.length)];
 	oikein = randomJuoma["vaiheet"];
 
@@ -43,43 +42,55 @@ function randomizeOptions() {
 	document.getElementById("juoma").innerHTML = randomJuoma["nimi"] + "n"
 
 	//haetaan ja randomisoidaan listan elementit
-	var children = getChildren("lista");
-	children = shuffleArray(children);
+	var children = ['lista1', 'lista2', 'lista3', 'lista4']
+	var shuffledChildren = shuffleArray(children);
 
 	//lisätään tietyn juoman valmistuvaiheet elementteihin
-	for (var i = 0; i < children.length; i++) {
-		children[i].innerHTML += randomJuoma["vaiheet"][i]
+	for (var i = 0; i < shuffledChildren.length; i++) {
+		document.getElementById(children[i]).innerHTML += randomJuoma["vaiheet"][i]
 	}
 }
 
 // funktio, joka sekoittaa listan
-function shuffleArray(array) {
-	for (let i = array.length - 1; i > 0; i--) {
-		const j = Math.floor(Math.random() * (i + 1));
-		const temp = array[i];
-		array[i] = array[j];
-		array[j] = temp;
-	}
-	return array;
+function shuffleArray(arr) {
+    for (i = 0; i < arr.length; i++) {
+        x = Math.floor(Math.random() * arr.length);
+        y = Math.floor(Math.random() * arr.length);
+        if (x === y) { //for dont change arr[index] with self !!!
+            continue;
+        }
+        temp0 = arr[x];
+        arr[x] = arr[y];
+        arr[y] = temp0;
+    }
+    return arr
 }
 
 // funktio palauttaa id:n perusteella parent-divin sisällä olevat elementit
 function getChildren(parent) {
-	return document.getElementById(parent).children;
+	var children = document.getElementById(parent).children;
+	var childrenIds = [];
+
+	for (i = 0; i < children.length; i++) {
+		childrenIds.push(children[i].id)
+	}
+	return childrenIds
 }
 
 // funktio tarkistaa, onko valmistusvaiheet oikeassa järjestyksessä (oikea järjestys rivillä 40)
 function checkOrder() {
-	var children = getChildren("lista")
-
+	var children = getChildren("lista");
+	var child = "";
+	var pisteet = 0;
 	// pisteiden lasku
 	for (var i = 0; i < children.length; i++) {
-		if (children[i].innerHTML.includes(oikein[i])) {
+		child = document.getElementById(children[i])
+		if (child.innerHTML.includes(oikein[i])) {
 			pisteet++;
 		}
 	}
 	document.getElementById("viesti").innerHTML = "Pisteitä: " + pisteet;
-	localStorage.pisteet = pisteet;
+	updateScore(3, pisteet)
 }
 
 

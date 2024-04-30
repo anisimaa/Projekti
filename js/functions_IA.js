@@ -1,3 +1,9 @@
+function updateScore(peliId, pisteet) {
+	localStorage.setItem("peli" + peliId, pisteet)
+}
+updateScore(1, 0)
+
+
 //kysymykset ja vastaukset
 const questions = [
     {
@@ -137,17 +143,10 @@ function nextPage () {
 function showScore(){
     resetState();
     questionElement.innerHTML = `Sait ${pisteet} pistettä!`;
-    localStorage.pisteet = pisteet;
+	updateScore(1, pisteet)
     seuraavabutton.innerHTML = "Seuraava peli";
     img.src = '../img/kuppit.jpg';
     seuraavabutton.style.display = "block";
-}
-
-//talletetaan saadut pisteet local storageen
-if (localStorage.pisteet) {
-	pisteet = localStorage.pisteet;
-} else {
-	pisteet = 0;
 }
 
 startGame();

@@ -1,11 +1,12 @@
+function updateScore(peliId, pisteet) {
+	localStorage.setItem("peli" + peliId, pisteet)
+}
+updateScore(4, 0)
+
+
 var pisteet;
 
-//talletetaan saadut pisteet local storageen
-if (localStorage.pisteet) {
-    pisteet = localStorage.pisteet;
-} else {
-    pisteet = 0;
-}
+
 
 document.getElementById("form1").onsubmit=function() {
     kuusikymmenta = parseInt(document.getElementById("kuusikymmenta").value);
@@ -14,7 +15,7 @@ document.getElementById("form1").onsubmit=function() {
 
        pisteet = kuusikymmenta + pienta + yksisentti;
 
-       localStorage.pisteet = pisteet;
+       updateScore(4, pisteet)
 
 
        document.getElementById("grade").innerHTML = pisteet;

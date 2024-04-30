@@ -1,3 +1,9 @@
+function updateScore(peliId, pisteet) {
+	localStorage.setItem("peli" + peliId, pisteet)
+}
+updateScore(2, 0)
+
+
 var pisteet;
 
 
@@ -15,11 +21,11 @@ function showMessage(msg) {
         messageBox.classList.add('info-container');
         pisteet++; // Increment score if the correct button is pressed
         console.log("pisteet: " + pisteet);
+		updateScore(2, pisteet)
     } else {
         messageBox.classList.remove('info-container');
     }
 }
-localStorage.pisteet = pisteet;
 
 function ClickImage(event) {
     console.log(event.offsetX + ":" + event.offsetY);
