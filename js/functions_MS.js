@@ -1,3 +1,4 @@
+//funktio lisää pelikohtaiset pisteet local storageen pelin id:n mukaiseen kohtaan
 function updateScore(peliId, pisteet) {
 	localStorage.setItem("peli" + peliId, pisteet)
 }
@@ -18,7 +19,8 @@ const juomat = [
 			'Vaahdota maito',
 			'Koristele'
 		]
-	}, {
+	},
+	{
 		"nimi": "cappuccino",
 		"kuva": "url",
 		"vaiheet": [
@@ -66,7 +68,7 @@ function shuffleArray(arr) {
     return arr
 }
 
-// funktio palauttaa id:n perusteella parent-divin sisällä olevat elementit
+// funktio palauttaa id:n perusteella parent-divin sisällä olevien elementtien idt
 function getChildren(parent) {
 	var children = document.getElementById(parent).children;
 	var childrenIds = [];
@@ -91,6 +93,10 @@ function checkOrder() {
 	}
 	document.getElementById("viesti").innerHTML = "Pisteitä: " + pisteet;
 	updateScore(3, pisteet)
+	
+	document.querySelector(".seuraava").innerHTML = "Seuraava";
+	document.querySelector(".seuraava").setAttribute("onClick", "location.href = '../html/pelisivu_NH.html'" );
+
 }
 
 
