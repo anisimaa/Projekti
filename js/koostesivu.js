@@ -1,19 +1,16 @@
-/* var totalScore = 0;
-
-
-function updateTotalScore() {
-    var totalScoreElement = document.getElementById('total-score');
-    totalScoreElement.innerText = "Pisteesi yhteensä: " + totalScore;
-}*/
+function totalScore() {
+	var totalScore = 0
+	for(i = 0; i < localStorage.length; i++) {
+		totalScore += parseInt(localStorage.getItem(localStorage.key(i)))
+	}
+    return totalScore
+}
 
 // Haetaan tallennetut pisteet local storagesta
-var totalScore = localStorage.getItem('pisteet');
+var pisteet = totalScore()
 
 // Tarkistetaan, onko pisteitä tallennettu
-if (totalScore !== null) {
-    // Muunnetaan tallennetut pisteet takaisin numeroksi tarvittaessa
-    var pisteet = parseInt(totalScore);
-
+if (pisteet !== null) {
     console.log("Tallennetut pisteet: " + pisteet);
 } else {
     // Jos pisteitä ei ole tallennettu, näytetään viesti
@@ -22,3 +19,4 @@ if (totalScore !== null) {
 
 document.getElementById("viesti").innerHTML = "Pisteitä: " + pisteet;
 
+localStorage.clear()
