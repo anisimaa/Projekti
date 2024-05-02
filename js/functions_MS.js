@@ -27,7 +27,27 @@ const juomat = [
 			'Valuta espresso',
 			'Vaahdota maito',
 			'Kaada maitovaahto',
-			'Latteart'
+			'Latte art'
+		]
+	},
+	{
+		"nimi": "caramel jäälatte",
+		"kuva": "url",
+		"vaiheet": [
+			'Lisää caramelkastike lasin reunoille',
+			'Lisää jäät',
+			'Lisää maito',
+			'Lisää espresso'
+		]
+	},
+	{
+		"nimi": "kaakao",
+		"kuva": "url",
+		"vaiheet": [
+			'Sekoita kaakaojauhe pieneen määrään vettä',
+			'Vaahdota maito',
+			'Kaada maito',
+			'Koristele'
 		]
 	}
 ]
@@ -91,7 +111,19 @@ function checkOrder() {
 			pisteet++;
 		}
 	}
-	document.getElementById("viesti").innerHTML = "Pisteitä: " + pisteet;
+	
+	var viesti = "";
+	if (pisteet === 1) {
+		viesti = "Sait yhden oikein";
+	} else if (pisteet === 2) {
+		viesti = "Sait kaksi oikein";
+	} else if (pisteet === 3) {
+		viesti = "Sait kolme oikein";
+	} else if (pisteet === 4) {
+		viesti = "Sait kaikki oikein!";
+	}
+	
+	document.getElementById("viesti").innerHTML = viesti;
 	updateScore(3, pisteet)
 	
 	document.querySelector(".seuraava").innerHTML = "Seuraava";
