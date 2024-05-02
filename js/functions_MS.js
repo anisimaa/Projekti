@@ -12,7 +12,7 @@ var oikein = [];
 const juomat = [
 	{
 		"nimi": "mocha latte",
-		"kuva": "url",
+		"kuva": "../img/mochalatte.png",
 		"vaiheet": [
 			'Lisää suklaakastike',
 			'Valuta espresso',
@@ -22,7 +22,7 @@ const juomat = [
 	},
 	{
 		"nimi": "cappuccino",
-		"kuva": "url",
+		"kuva": "../img/cappuccino.png",
 		"vaiheet": [
 			'Valuta espresso',
 			'Vaahdota maito',
@@ -32,7 +32,7 @@ const juomat = [
 	},
 	{
 		"nimi": "caramel jäälatte",
-		"kuva": "url",
+		"kuva": "../img/jaalatte.png",
 		"vaiheet": [
 			'Lisää caramelkastike lasin reunoille',
 			'Lisää jäät',
@@ -42,11 +42,11 @@ const juomat = [
 	},
 	{
 		"nimi": "kaakao",
-		"kuva": "url",
+		"kuva": "../img/kaakao.png",
 		"vaiheet": [
 			'Sekoita kaakaojauhe pieneen määrään vettä',
 			'Vaahdota maito',
-			'Kaada maito',
+			'Kaada maito, jätä ohut vaahtokerros',
 			'Koristele'
 		]
 	}
@@ -62,6 +62,7 @@ function randomizeOptions() {
 
 	//lisätään juoman nimi tehtävän ohjeistukseen
 	document.getElementById("juoma").innerHTML = randomJuoma["nimi"] + "n"
+	document.getElementById("kuva").src = randomJuoma["kuva"];
 
 	//haetaan ja randomisoidaan listan elementit
 	var children = ['lista1', 'lista2', 'lista3', 'lista4']
@@ -78,7 +79,7 @@ function shuffleArray(arr) {
     for (i = 0; i < arr.length; i++) {
         x = Math.floor(Math.random() * arr.length);
         y = Math.floor(Math.random() * arr.length);
-        if (x === y) { //for dont change arr[index] with self !!!
+        if (x === y) {
             continue;
         }
         temp0 = arr[x];
@@ -203,7 +204,6 @@ function dragStart(e) {
 	pointerStartY = e.clientY || e.touches?.[0]?.clientY
 
 	setItemsGap()
-	//disablePageScroll()
 	initDraggableItem()
 	initItemsState()
 	prevRect = draggableItem.getBoundingClientRect()
@@ -226,13 +226,6 @@ function setItemsGap() {
 	const item2Rect = item2.getBoundingClientRect()
 
 	itemsGap = Math.abs(item1Rect.bottom - item2Rect.top)
-}
-
-// estetään sivun vieritys
-function disablePageScroll() {
-	document.body.style.overflow = 'hidden'
-	document.body.style.touchAction = 'none'
-	document.body.style.userSelect = 'none'
 }
 
 // nollataan attribuutit

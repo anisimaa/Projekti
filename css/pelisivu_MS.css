@@ -81,7 +81,7 @@ body {
     text-align: center;
     justify-content: center; 
     height: 45em;
-    width: 30em;
+    width: 35em;
 }
 
 span {
@@ -93,6 +93,13 @@ span {
 #juoma {
 	font-size: 30px;
 	max-width: 100%;
+}
+
+#kuva {
+	margin-top: 20px;
+	max-width: 250px;
+	border-radius: 10px;
+	box-shadow: 0 0 5px 4px #62290035;
 }
 
 .list {
@@ -107,6 +114,7 @@ span {
   padding: 15px;
   display: flex;
   align-items: center;
+  text-align: left;
   position: relative;
   will-change: transform;
   background: #F3EAD9;
