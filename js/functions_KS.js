@@ -46,23 +46,9 @@ function CheckButton(x, y, clickBox) {
     }
     return false;
 }
+ 
 
-seuraavabutton.addEventListener("click", () => {
-    if(currentQuestionIndex < questions.length){
-        handleSeuraavaButton();
-    }else {
-        startGame();
-    }
-})   
-
-var seuraavabutton = document.getElementById('seuraava');
-seuraavabutton.addEventListener('click', function() {
-    showScore();
-});
-
-function nextPage () {
-    location.href = "../html/pelisivu_MS.html";
- }
+var seuraavabutton = document.getElementById('seuraavabutton');
 
 function showScore() {
   var pointScoreContainer = document.getElementById('pointcontainer');
@@ -70,13 +56,16 @@ function showScore() {
   pointScoreContainer.classList.add('pointcontainer');
   pisteet = 0;
   coffeeInfo.style.display = 'none';
+  
+
+  seuraavabutton.innerText = "Seuraava peli";
+
+  seuraavabutton.removeEventListener('click', showScore);
+  seuraavabutton.addEventListener('click', nextPage);
 }
 
-seuraavabutton.addEventListener("click", () => {
-    if(currentQuestionIndex < questions.length){
-        handleSeuraavaButton();
-    }else {
-        nextPage();
-    }
-})   
+function nextPage () {
+        location.href = "../html/pelisivu_MS.html";
+ }
 
+ 
