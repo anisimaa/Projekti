@@ -17,23 +17,27 @@ function showMessage(msg) {
     var messageBox = document.getElementById('message');
     messageBox.innerText = msg;
   
-    if (msg.includes("Oikein!")) { // Check if message includes "Oikein!"
+    if (msg.includes("Oikein!")) { 
         messageBox.classList.add('info-container');
-        pisteet++; // Increment score if the correct button is pressed
+        pisteet++;
         console.log("pisteet: " + pisteet);
 		updateScore(2, pisteet)
     } else {
         messageBox.classList.remove('info-container');
     }
 }
+var imageClicked = false;
 
 function ClickImage(event) {
-    console.log(event.offsetX + ":" + event.offsetY);
+    if (!imageClicked) {
+        console.log(event.offsetX + ":" + event.offsetY);
 
-    if (CheckButton(event.offsetX, event.offsetY, btn)) {
-        showMessage("Oikein! Tästä napista valutat espresson, valumisessa pitäisi kestää n. 25 sekuntia.");
-    } else {
-        showMessage("Väärin!");
+        if (CheckButton(event.offsetX, event.offsetY, btn)) {
+            showMessage("Oikein! Tästä napista valutat espresson, valumisessa pitäisi kestää n. 25 sekuntia.");
+            imageClicked = true;
+        } else {
+            showMessage("Väärin!");
+        }
     }
 }
 
