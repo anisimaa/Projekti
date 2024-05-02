@@ -1,32 +1,35 @@
 /*tausta*/
 body {
-  background: url(../img/syksy_3.png) no-repeat center center fixed;
+  background: url(../img/taustaMS.jpg) no-repeat center center fixed;
   background-size: cover;
 }
 
 /*navbar*/
 /*navbar levitettynä*/
+
 .sidenav {
     height: 100%;
     width: 0;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     top: 0;
     left: 0;
-    background-color: #f0daae;
+    background-color: #e2d0ad;
     overflow-x: hidden;
-    padding-top: 60px;
     transition: 0.5s;
+	box-shadow: 10px 0 5px -2px #a1857126;
   }
   
   /*navbar headeri*/
   #navbar-header {
     color: #482e1d;
     margin-left: 30px;
+	margin-top: 50px;
   }
   
   /*linkit navbarinv sisällä*/
   .sidenav a {
+	margin-top: 30px;
     padding: 8px 8px 8px 32px;
     text-decoration: none;
     font-size: 25px;
@@ -43,15 +46,14 @@ body {
   /*navbar ruksi nappi*/
   .sidenav .closebtn {
     position: absolute;
-    top: 0;
+    margin: 0;
     right: 25px;
     font-size: 36px;
-    margin-left: 50px;
   }
   
   /*navbar nappi*/
-  .openNav {
-    color: #482e1d;
+  #openNav {
+    color: #fde8cfa7;
     margin-left: 10px;
   }
   
@@ -69,19 +71,21 @@ body {
 }
 
 .container {
-    background-color: #F0DAAE;
-    margin-top: 2.5em;
+    background-color: #e7d0ac;
     margin: auto;
+	margin-top: 1em;
+	margin-bottom: 2em;
     padding: 0.5em;
-    padding-top: 2.5em;
+    padding-top: 2em;
     border-radius: 15px;
     position: relative;
     flex-direction: column;
     align-items: center; 
     text-align: center;
     justify-content: center; 
-    height: 45em;
     width: 35em;
+	height: fit-content;
+	transition: all 0.5s ease-in-out;
 }
 
 span {
@@ -99,7 +103,7 @@ span {
 	margin-top: 20px;
 	max-width: 250px;
 	border-radius: 10px;
-	box-shadow: 0 0 5px 4px #62290035;
+	box-shadow: 0 0 10px 4px #cb9777d8;
 }
 
 .list {
@@ -107,7 +111,9 @@ span {
   position: relative;
   flex-direction: column;
   gap: 20px 0;
-  padding: 10%;
+  padding: 15px;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .list_item {
@@ -120,7 +126,7 @@ span {
   background: #F3EAD9;
   color: #333;
   border-radius: 5px;
-  box-shadow: 0 4px 6px -1px #F3EAD9, 0 2px 4px -2px #F3EAD9;
+  box-shadow: 0 4px 6px -1px #6749375b, 0 2px 4px -2px #F3EAD9;
   font-weight: 500;
   font-size: 20px;
 }
@@ -138,7 +144,7 @@ span {
 .drag-handle::after {
   content: '⠿';
   font-size: 25px;
-  color: #d4c09a;
+  color: #baa989;
 }
 
 .list_item.is-idle {
@@ -158,10 +164,14 @@ span {
   z-index: 10;
 }
 
-
 .seuraava:hover {
-    background-color: #efdcb5;
-    border: 2px solid #c2b599;
+    background-color: #F3EAD9;
+    border: 2px solid #6749375b;
+}
+
+#viesti {
+	margin-top: 10px;
+	font-size: 30;
 }
 
 /*fontti*/
@@ -184,7 +194,7 @@ span {
 }
 
 .seuraava {
-  margin-top: 30px;
+  margin: 30px;
   font-size: 16px;
   width: 6em;
   height: 2em;

@@ -108,23 +108,32 @@ function checkOrder() {
 	// pisteiden lasku
 	for (var i = 0; i < children.length; i++) {
 		child = document.getElementById(children[i])
+		child.classList.remove("js-item")
 		if (child.innerHTML.includes(oikein[i])) {
 			pisteet++;
+			child.style.backgroundColor = "#d5e7b8"
+		} else {
+			child.style.backgroundColor = "#feb5b1"
 		}
 	}
 	
 	var viesti = "";
 	if (pisteet === 1) {
-		viesti = "Sait yhden oikein";
+		viesti = "Sait yhden oikein!";
 	} else if (pisteet === 2) {
-		viesti = "Sait kaksi oikein";
+		viesti = "Sait kaksi oikein!";
 	} else if (pisteet === 3) {
-		viesti = "Sait kolme oikein";
+		viesti = "Sait kolme oikein!";
 	} else if (pisteet === 4) {
 		viesti = "Sait kaikki oikein!";
+	} else {
+		viesti = "Pieleen meni!";
 	}
-	
-	document.getElementById("viesti").innerHTML = viesti;
+
+	var viestispan = document.createElement("span");
+	document.querySelector("#lista").appendChild(viestispan);
+	viestispan.innerHTML = viesti
+	document.querySelector("#teksti").innerHTML = "";
 	updateScore(3, pisteet)
 	
 	document.querySelector(".seuraava").innerHTML = "Seuraava";
