@@ -59,7 +59,6 @@ function showScore() {
   var pointScoreContainer = document.getElementById('pointcontainer');
   pointScoreContainer.innerText = "Sait " + pisteet + " pistettä!";
   pointScoreContainer.classList.add('pointcontainer');
-  pisteet = 0;
   coffeeInfo.style.display = 'none';
   
 
