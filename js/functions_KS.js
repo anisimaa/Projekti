@@ -37,6 +37,7 @@ function ClickImage(event) {
             imageClicked = true;
         } else {
             showMessage("Väärin!");
+            imageClicked = true;
         }
     }
 }
