@@ -9,3 +9,5 @@ apuna pelisivun luomisessa. NH 28.4.2024</p>
 
 <p>Käytin <a href="https://tahazsh.com/blog/seamless-ui-with-js-drag-to-reorder-example"> tätä tutoriaalia </a> apuna pelisivun toiminnan luomisessa. MS</p>
 <p>Käytin <a href="https://www.w3schools.com/js/default.asp"> tätä nettisivua </a> apuna javascriptin perustoimintojen ymmärtämiseen. MS</p>
+
+<p><a href="https://app.hacknplan.com/p/201770/kanban?categoryId=0&boardId=0">Linkki</a> Hacknplan sivustolle.</p>
