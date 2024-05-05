@@ -80,12 +80,12 @@ body {
   height: 75vh;
 }
 
-p, h2 {
+p, #h2 {
   text-align: center;
   opacity: 1;
 }
 
-h2 {
+#h2 {
   color: rgb(252, 234, 212);
 }
 
