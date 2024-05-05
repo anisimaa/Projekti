@@ -9,24 +9,26 @@
     left: 0;
     background-color: #f0daae;
     overflow-x: hidden;
-    padding-top: 60px;
+    padding-top: 50px;
     transition: 0.5s;
   }
   
   /*navbar headeri*/
   #navbar-header {
     color: #482e1d;
-    margin-left: 30px;
+    margin-left: 15px;
   }
   
-  /*linkit navbarinv sisällä*/
+  /*linkit navbarin sisällä*/
   .sidenav a {
-    padding: 8px 8px 8px 32px;
+    padding: 4px 8px 8px 22px;
+    margin-top: 1em;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 24px;
     color: #482e1d;
     display: block;
     transition: 0.3s;
+    text-align: left;
   }
   
   /*linkki hover*/
@@ -44,7 +46,7 @@
   }
   
   /*navbar nappi*/
-  span {
+  #function {
     color: bisque;
     margin-left: 10px;
   }
@@ -90,7 +92,7 @@ img {
     border-radius: 12px;
 }
 
-p {
+#question {
     font-size: 28px;
     margin-top: 2em;
     text-align: center;
@@ -176,6 +178,22 @@ p {
 }
 
 /* Responsiivisuus */
+@media screen and (min-width: 1536px){
+  .container {
+    max-width: 1280px;
+    margin-top: 5em;
+    height: 36.5em;
+  }
+}
+
+@media screen and (min-width: 1280px){
+  .container {
+    max-width: 1280px;
+    margin-top: 5em;
+    height: 36.5em;
+  }
+}
+
 @media screen and (max-width: 1536px){
   .container {
     max-width: 1280px;
@@ -189,6 +207,12 @@ p {
 
   #seuraava {
     left: 75%;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .container {
+    margin-top: 2em;
   }
 }
 
