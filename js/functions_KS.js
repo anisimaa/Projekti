@@ -8,7 +8,6 @@ var pisteet;
 
 
 var btn_Espresso = [128, 155, 93, 116];
-var btn_Clean = [123, 234, 456, 567];
 
 var btn = btn_Espresso;
 var pisteet = 0;
