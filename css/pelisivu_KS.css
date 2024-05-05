@@ -79,10 +79,9 @@
 }
 
 body {
-    background-image: url(../img/metsäKS.jpg);
-    background-size: cover;
-    background-position: center;
-}
+	background: url(../img/metsäKS.jpg) no-repeat center center fixed;
+	background-size: cover;
+  }
 
 img {
     width: 80%;

@@ -139,3 +139,11 @@ body {
       opacity: 0.6;
     }
 /*footer*/
+
+/* Responsiivisuus puhelimelle */
+@media screen and (max-width: 767px) {
+    .content {
+        margin-top: 100%;
+        max-width: 75%;
+    }
+}
