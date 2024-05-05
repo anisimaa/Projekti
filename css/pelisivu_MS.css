@@ -6,63 +6,63 @@ body {
 
 /*navbar*/
 /*navbar levitettynä*/
-
 .sidenav {
-    height: 100%;
-    width: 0;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #e7d0ac;
-    overflow-x: hidden;
-    transition: 0.5s;
-	box-shadow: 10px 0 5px -2px #a1857126;
-  }
-  
-  /*navbar headeri*/
-  #navbar-header {
-    color: #482e1d;
-    margin-left: 30px;
-	margin-top: 50px;
-  }
-  
-  /*linkit navbarinv sisällä*/
-  .sidenav a {
-	margin-top: 30px;
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #482e1d;
-    display: block;
-    transition: 0.3s;
-  }
-  
-  /*linkki hover*/
-  .sidenav a:hover {
-    color: #895d2b;
-  }
-  
-  /*navbar ruksi nappi*/
-  .sidenav .closebtn {
-    position: absolute;
-    margin: 0;
-    right: 25px;
-    font-size: 36px;
-  }
-  
-  /*navbar nappi*/
-  #openNav {
-    color: #fde8cfa7;
-    margin-left: 10px;
-  }
-  
-  /*Pienemmille ruuduille: Jos ruutu on pienempi kuin 450px, muuta navbarin tyyliä (ja pienempi fontti koko) */
-  @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
-  }
-  /*navbar*/
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #f0daae;
+  overflow-x: hidden;
+  padding-top: 50px;
+  transition: 0.5s;
+}
+
+/*navbar headeri*/
+#navbar-header {
+  color: #482e1d;
+  margin-left: 15px;
+}
+
+/*linkit navbarin sisällä*/
+.sidenav a {
+  padding: 4px 8px 8px 22px;
+  margin-top: 1em;
+  text-decoration: none;
+  font-size: 24px;
+  color: #482e1d;
+  display: block;
+  transition: 0.3s;
+  text-align: left;
+}
+
+/*linkki hover*/
+.sidenav a:hover {
+  color: #895d2b;
+}
+
+/*navbar ruksi nappi*/
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/*navbar nappi*/
+#function {
+  color: bisque;
+  margin-left: 10px;
+}
+
+/*Pienemmille ruuduille: Jos ruutu on pienempi kuin 450px, muuta navbarin tyyliä (ja pienempi fontti koko) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+/*navbar*/
   
 * {
     margin:0;
