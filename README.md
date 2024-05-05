@@ -1,8 +1,8 @@
-### Käytetty apuna
+### Käytetty apuna:
 <p><a href="https://app.hacknplan.com/p/201770/kanban?categoryId=0&boardId=0">Linkki</a> Hacknplan sivustolle. IA 5.5.2024</p>
 <p><a href="#">Linkki</a> julkaisu sivustolle. IA 5.5.2024</p>
 
-### Lähteet
+### Lähteet:
 <p>Käytin <a href="https://www.youtube.com/watch?v=4AHot187Lj0">tätä videoita</a> apuna pelisivun luomisessa. NH 11.4.2024</p>
 <p>Käytin myös <a href="https://codeactually.com/interactivequiz_dropdown.html">tätä nettisivua</a> 
 apuna pelisivun luomisessa. NH 28.4.2024</p>
@@ -12,7 +12,7 @@ apuna pelisivun luomisessa. NH 28.4.2024</p>
 <p>Kuvat ovat otettu <a href="https://pixabay.com/fi/">Pixabay</a>sivustolta. IA 5.5.2024</p>
 
 ### Nimimerkit:
-<p>Isla Anisimaa IA
-Nelly Huima NH
-Miia Sandelin MS
+<p>Isla Anisimaa IA<br>
+Nelly Huima NH<br>
+Miia Sandelin MS<br>
 Katarina Siimes KS</p>
