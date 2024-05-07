@@ -1,6 +1,6 @@
 ### Käytetty apuna:
 <p><a href="https://app.hacknplan.com/p/201770/kanban?categoryId=0&boardId=0">Linkki</a> Hacknplan sivustolle. IA 5.5.2024</p>
-<p><a href="#">Linkki</a> julkaisu sivustolle. IA 5.5.2024</p>
+<p><a href="https://www.students.oamk.fi/~n3anis00/Projekti-1/html/etusivu.html">Linkki</a> students.oamk-sivustolle. IA 5.5.2024</p>
 
 ### Lähteet:
 <p>Käytin <a href="https://www.youtube.com/watch?v=4AHot187Lj0">tätä videoita</a> apuna pelisivun luomisessa. NH 11.4.2024</p>

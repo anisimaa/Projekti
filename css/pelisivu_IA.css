@@ -276,6 +276,7 @@ img {
 
 @media screen and (max-width: 475px){
   .container{
+    margin-top: 2.5em;
     margin-right: 0.5em;
     margin-left: 0.5em;
     height: 34em;
@@ -292,7 +293,11 @@ img {
 }
 
 #buttons {
-  padding-left: 7.5em;
+  padding-left: 4.5em;
+}
+
+#seuraava {
+  left: 33%;
 }
   }
 
